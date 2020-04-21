@@ -10,6 +10,13 @@ query WorkoutDetail($id: ID!) {
 fragment WorkoutDetailFragment on WorkoutType {
   id
   date
+  categories {
+    edges {
+      node {
+        ...CategoryDetailFragment
+      }
+    }
+  }
   workoutexercises {
     edges {
       node {

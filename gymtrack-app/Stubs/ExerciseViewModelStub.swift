@@ -25,8 +25,7 @@ struct ExerciseViewModelStub: ViewModelStub {
     let categories = categoryStub.list()
     let effortStub = EffortViewModelStub()
     
-    let effortList_1 = effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 8..<12)
-    let effortList_2 = effortStub.list(workoutsCount: 5, itemsPerDay: 8, valueRange: 8..<12)
+    let effortList = effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 50..<90)
 
     return [
       ExerciseViewModel(
@@ -34,35 +33,35 @@ struct ExerciseViewModelStub: ViewModelStub {
         name: "Back Squats",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[0]],
-        efforts: effortList_1
+        efforts: effortList
       ),
       ExerciseViewModel(
         id: "4",
         name: "Chin-ups",
         unit: ExerciseViewModel.Unit.step,
-        categories: Array(categories[0...2]),
-        efforts: effortList_1
+        categories: Array(categories[2...4]),
+        efforts: effortList
       ),
       ExerciseViewModel(
         id: "2",
         name: "Front Squats",
         unit: ExerciseViewModel.Unit.weight,
-        categories: [categories[0]],
-        efforts: effortList_1
+        categories: [categories[3]],
+        efforts: effortList
       ),
       ExerciseViewModel(
         id: "3",
         name: "Deadlift",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[1]],
-        efforts: effortList_2
+        efforts: effortList
       ),
       ExerciseViewModel(
         id: "5",
         name: "Bench Press",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[2]],
-        efforts: effortList_1
+        efforts: effortList
       ),
     ]
   }

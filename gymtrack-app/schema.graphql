@@ -92,7 +92,7 @@ type ExerciseType implements Node {
   categories(before: String, after: String, first: Int, last: Int): CategoryTypeConnection!
   workoutSet(before: String, after: String, first: Int, last: Int, date_Gt: Date, date_Gte: Date, date_Lt: Date, date_Lte: Date, date: Date): WorkoutTypeConnection!
   workoutexerciseSet(before: String, after: String, first: Int, last: Int): WorkoutExerciseTypeConnection!
-  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection
+  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection!
 }
 
 type ExerciseTypeConnection {
@@ -128,12 +128,12 @@ type PageInfo {
 
 type Query {
   workout(id: ID!): WorkoutType
-  workouts(before: String, after: String, first: Int, last: Int, date_Gt: Date, date_Gte: Date, date_Lt: Date, date_Lte: Date, date: Date): WorkoutTypeConnection
+  workouts(before: String, after: String, first: Int, last: Int, date_Gt: Date, date_Gte: Date, date_Lt: Date, date_Lte: Date, date: Date): WorkoutTypeConnection!
   exercise(id: ID!): ExerciseType
-  exercises(before: String, after: String, first: Int, last: Int): ExerciseTypeConnection
+  exercises(before: String, after: String, first: Int, last: Int): ExerciseTypeConnection!
   effort(id: ID!): EffortType
-  efforts(before: String, after: String, first: Int, last: Int, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection
-  lastWorkout: WorkoutType
+  efforts(before: String, after: String, first: Int, last: Int, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection!
+  lastWorkout: WorkoutType!
   _debug: DjangoDebug
 }
 
@@ -160,7 +160,8 @@ type WorkoutType implements Node {
   date: Date!
   exercises(before: String, after: String, first: Int, last: Int): ExerciseTypeConnection!
   workoutexercises(before: String, after: String, first: Int, last: Int): WorkoutExerciseTypeConnection!
-  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection
+  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection!
+  categories(before: String, after: String, first: Int, last: Int): CategoryTypeConnection!
 }
 
 type WorkoutTypeConnection {
@@ -173,4 +174,3 @@ type WorkoutTypeEdge {
   node: WorkoutType
   cursor: String!
 }
-

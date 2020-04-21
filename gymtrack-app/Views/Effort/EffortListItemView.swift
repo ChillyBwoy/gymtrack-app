@@ -30,7 +30,7 @@ struct EffortListItemView: View {
     HStack(alignment: .center, spacing: 5) {
       Text("\(effort.createdAt, formatter: dateFormatter)")
         .modifier(EffortTextViewModifier())
-        .frame(minWidth: 34, alignment: .leading)
+        .frame(minWidth: 36, alignment: .leading)
 
       Divider()
       if unit == .check {

@@ -24,7 +24,7 @@ class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
       switch result {
 
       case .success(let graphQLResult):
-        self.items = graphQLResult.data?.exercises?.edges.compactMap { edge in
+        self.items = graphQLResult.data?.exercises.edges.compactMap { edge in
           if let fragment = edge?.node?.fragments.exerciseListItemFragment {
             return ExerciseListItemGraphQLMapper(apiEntity: fragment).entity()
           }

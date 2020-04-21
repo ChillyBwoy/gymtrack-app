@@ -39,6 +39,7 @@ struct WorkoutDetailGraphQLMapper: GraphQLAPIMapper {
 
   func entity() -> WorkoutViewModel? {
     let date = dateFormatter(isoStr: apiEntity.date)
+
     let workoutexercises: [WorkoutExerciseViewModel] = apiEntity.workoutexercises.edges.compactMap { edge in
       if let fragment = edge?.node?.fragments.workoutExerciseFragment {
         return WorkoutexercisesDetailGraphQLMapper(apiEntity: fragment).entity()
@@ -46,9 +47,18 @@ struct WorkoutDetailGraphQLMapper: GraphQLAPIMapper {
       return nil
     }
 
+    let categories: [CategoryViewModel] = apiEntity.categories.edges.compactMap { edge in
+      if let fragment = edge?.node?.fragments.categoryDetailFragment {
+        return CategoryDetailGraphQLMapper(apiEntity: fragment).entity()
+      }
+      return nil
+    }
+
     return WorkoutViewModel(
       id: apiEntity.id,
       date: date,
-      workoutexercises: workoutexercises)
+      workoutexercises: workoutexercises,
+      categories: categories
+    )
   }
 }

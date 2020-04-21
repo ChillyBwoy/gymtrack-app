@@ -33,24 +33,32 @@ struct WorkoutDetail<Model>: View where Model: WorkoutDetailModel {
   var body: some View {
     NavigationView {
       if model.workout != nil {
-        VStack {
-          Picker(selection: $groupBy, label: Text("Group efforts by")) {
-            ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
-              Text("\(type.rawValue)").tag(type)
+        ScrollView(.vertical, showsIndicators: false) {
+          VStack {
+            Picker(selection: $groupBy, label: Text("Group efforts by")) {
+              ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
+                Text("\(type.rawValue)").tag(type)
+              }
             }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal, 5)
+            .padding(.vertical, 5)
+           
+            HStack {
+              ForEach(model.workout!.categories, id: \.id) { category in
+                CategoryBadgeView(category: category)
+              }
+            }
+            WorkoutExerciseListView(items: model.workout!.workoutexercises)
           }
-          .pickerStyle(SegmentedPickerStyle())
-          .padding(.horizontal, 15)
-          .padding(.vertical, 5)
-         WorkoutDetailView(workout: model.workout!)
-          .padding(.horizontal, 10)
-          .navigationBarTitle(Text("\(model.workout!.date, formatter: self.dateFormatter)"))
-          .navigationBarItems(trailing: Button(action: {
-            
-          }) {
-            Image(systemName: "plus")
-          })
         }
+        .padding(.horizontal, 10)
+        .navigationBarTitle(Text("\(model.workout!.date, formatter: self.dateFormatter)"))
+        .navigationBarItems(trailing: Button(action: {
+          print("Add")
+        }) {
+          Image(systemName: "plus")
+        })
       } else {
         Text("Loading...")
       }
@@ -63,8 +71,12 @@ struct WorkoutDetail_Previews: PreviewProvider {
     Group {
       WorkoutDetail(
         model: WorkoutDetailModel_Previews(),
-        id: "V29ya291dFR5cGU6MTQ4")
+        id: "some-test-id")
       .colorScheme(.light)
+      WorkoutDetail(
+        model: WorkoutDetailModel_Previews(),
+        id: "some-test-id")
+      .colorScheme(.dark)
     }
   }
 }

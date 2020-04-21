@@ -13,7 +13,6 @@
 		3A18190B244B1EDD000982DF /* SwiftUIDateGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 3A18190A244B1EDD000982DF /* SwiftUIDateGrid */; };
 		3A182CD5244F095A001AE620 /* CategoryBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A182CD4244F095A001AE620 /* CategoryBadgeView.swift */; };
 		3A3553EE2448DE6500D485D6 /* WorkoutDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */; };
-		3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */; };
 		3A35540A2448E0AD00D485D6 /* ExerciseDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */; };
 		3A3E96A8244B57E600433E4E /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */; };
 		3A48389A23F9E09500D81883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48389923F9E09500D81883 /* AppDelegate.swift */; };
@@ -38,6 +37,9 @@
 		3ACEA332244F50870030E3DC /* ExerciseListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA331244F50870030E3DC /* ExerciseListModel.swift */; };
 		3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */; };
 		3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */; };
+		3AE1FB65244F990400252C08 /* WorkoutExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1FB64244F990400252C08 /* WorkoutExerciseListView.swift */; };
+		3AE1FB67244F992E00252C08 /* WorkoutExerciseViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1FB66244F992E00252C08 /* WorkoutExerciseViewModelStub.swift */; };
+		3AE1FB69244F9AE400252C08 /* WorkoutExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1FB68244F9AE400252C08 /* WorkoutExerciseViewModel.swift */; };
 		3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */; };
 		3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */; };
 		3AE7D147244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift */; };
@@ -77,7 +79,6 @@
 		3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExerciseList.graphql; sourceTree = "<group>"; };
 		3A182CD4244F095A001AE620 /* CategoryBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBadgeView.swift; sourceTree = "<group>"; };
 		3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WorkoutDetail.graphql; sourceTree = "<group>"; };
-		3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 		3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExerciseDetail.graphql; sourceTree = "<group>"; };
 		3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
 		3A40F39E244B06D000A256E6 /* SwiftUIDateGrid */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUIDateGrid; path = ../../github/SwiftUIDateGrid; sourceTree = "<group>"; };
@@ -104,6 +105,9 @@
 		3ACEA331244F50870030E3DC /* ExerciseListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListModel.swift; sourceTree = "<group>"; };
 		3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailModel.swift; sourceTree = "<group>"; };
 		3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
+		3AE1FB64244F990400252C08 /* WorkoutExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseListView.swift; sourceTree = "<group>"; };
+		3AE1FB66244F992E00252C08 /* WorkoutExerciseViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseViewModelStub.swift; sourceTree = "<group>"; };
+		3AE1FB68244F9AE400252C08 /* WorkoutExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseViewModel.swift; sourceTree = "<group>"; };
 		3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+graphQLClient.swift"; sourceTree = "<group>"; };
 		3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+EnvironmentKey.swift"; sourceTree = "<group>"; };
 		3AE7D146244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailGraphQLMapper.swift; sourceTree = "<group>"; };
@@ -151,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				3ACEA30A244F1A320030E3DC /* Exercise */,
-				3ACEA309244F180F0030E3DC /* Workout */,
 				3ACEA306244F16380030E3DC /* WorkoutExercise */,
 				3ACEA301244F116B0030E3DC /* Effort */,
 				3A182CD3244F0948001AE620 /* Category */,
@@ -296,16 +299,9 @@
 			isa = PBXGroup;
 			children = (
 				3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */,
+				3AE1FB64244F990400252C08 /* WorkoutExerciseListView.swift */,
 			);
 			path = WorkoutExercise;
-			sourceTree = "<group>";
-		};
-		3ACEA309244F180F0030E3DC /* Workout */ = {
-			isa = PBXGroup;
-			children = (
-				3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */,
-			);
-			path = Workout;
 			sourceTree = "<group>";
 		};
 		3ACEA30A244F1A320030E3DC /* Exercise */ = {
@@ -334,6 +330,7 @@
 				3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */,
 				3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */,
 				3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */,
+				3AE1FB66244F992E00252C08 /* WorkoutExerciseViewModelStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -353,6 +350,7 @@
 				3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */,
 				3AE7D151244E3BB200031884 /* EffortViewModel.swift */,
 				3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */,
+				3AE1FB68244F9AE400252C08 /* WorkoutExerciseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -514,6 +512,7 @@
 				3A3E96A8244B57E600433E4E /* WorkoutDetail.swift in Sources */,
 				3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */,
 				3A182CD5244F095A001AE620 /* CategoryBadgeView.swift in Sources */,
+				3AE1FB67244F992E00252C08 /* WorkoutExerciseViewModelStub.swift in Sources */,
 				3AE7D15E244E48EF00031884 /* WorkoutViewModelStub.swift in Sources */,
 				3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */,
 				3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */,
@@ -533,8 +532,8 @@
 				3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */,
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
 				3AF7BEB3244E242100866A8C /* CategoryDetailGraphQLMapper.swift in Sources */,
-				3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */,
 				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
+				3AE1FB65244F990400252C08 /* WorkoutExerciseListView.swift in Sources */,
 				3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */,
 				3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */,
 				3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */,
@@ -543,6 +542,7 @@
 				3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */,
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
 				3AE7D15C244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift in Sources */,
+				3AE1FB69244F9AE400252C08 /* WorkoutExerciseViewModel.swift in Sources */,
 				3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */,
 				3AE7D147244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift in Sources */,
 				3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */,

@@ -188,9 +188,13 @@
               "isDeprecated": false,
               "name": "workouts",
               "type": {
-                "kind": "OBJECT",
-                "name": "WorkoutTypeConnection",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "WorkoutTypeConnection",
+                  "ofType": null
+                }
               }
             },
             {
@@ -268,9 +272,13 @@
               "isDeprecated": false,
               "name": "exercises",
               "type": {
-                "kind": "OBJECT",
-                "name": "ExerciseTypeConnection",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ExerciseTypeConnection",
+                  "ofType": null
+                }
               }
             },
             {
@@ -448,9 +456,13 @@
               "isDeprecated": false,
               "name": "efforts",
               "type": {
-                "kind": "OBJECT",
-                "name": "EffortTypeConnection",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "EffortTypeConnection",
+                  "ofType": null
+                }
               }
             },
             {
@@ -460,9 +472,13 @@
               "isDeprecated": false,
               "name": "lastWorkout",
               "type": {
-                "kind": "OBJECT",
-                "name": "WorkoutType",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "WorkoutType",
+                  "ofType": null
+                }
               }
             },
             {
@@ -682,9 +698,70 @@
               "isDeprecated": false,
               "name": "efforts",
               "type": {
-                "kind": "OBJECT",
-                "name": "EffortTypeConnection",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "EffortTypeConnection",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "before",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "after",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "first",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "last",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  }
+                }
+              ],
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "categories",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "CategoryTypeConnection",
+                  "ofType": null
+                }
               }
             }
           ],
@@ -1279,9 +1356,13 @@
               "isDeprecated": false,
               "name": "efforts",
               "type": {
-                "kind": "OBJECT",
-                "name": "EffortTypeConnection",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "EffortTypeConnection",
+                  "ofType": null
+                }
               }
             }
           ],

@@ -83,9 +83,8 @@ struct EffortViewModelStub: ViewModelStub {
           repeats: Int.random(in: 10 ... 15),
           failure: false)
         result.append(effort)
+        date = calendar.date(byAdding: .minute, value: 3, to: date)!
       }
-
-      date = calendar.date(byAdding: .day, value: 3, to: date)!
     }
     
     return result
