@@ -34,6 +34,10 @@
 		3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */; };
 		3ACEA32C244F1F900030E3DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA32B244F1F900030E3DC /* API.swift */; };
 		3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEA32D244F1FB30030E3DC /* schema.graphql */; };
+		3ACEA330244F4DF80030E3DC /* WorkoutDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA32F244F4DF80030E3DC /* WorkoutDetailModel.swift */; };
+		3ACEA332244F50870030E3DC /* ExerciseListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA331244F50870030E3DC /* ExerciseListModel.swift */; };
+		3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */; };
+		3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */; };
 		3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */; };
 		3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */; };
 		3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */; };
@@ -95,6 +99,10 @@
 		3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseDetailView.swift; sourceTree = "<group>"; };
 		3ACEA32B244F1F900030E3DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3ACEA32D244F1FB30030E3DC /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
+		3ACEA32F244F4DF80030E3DC /* WorkoutDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailModel.swift; sourceTree = "<group>"; };
+		3ACEA331244F50870030E3DC /* ExerciseListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListModel.swift; sourceTree = "<group>"; };
+		3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailModel.swift; sourceTree = "<group>"; };
+		3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+graphQLClient.swift"; sourceTree = "<group>"; };
 		3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+EnvironmentKey.swift"; sourceTree = "<group>"; };
 		3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPIMappers.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			children = (
 				3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */,
 				3AB86E33244B66E300E5C009 /* ExerciseList.swift */,
+				3ACEA331244F50870030E3DC /* ExerciseListModel.swift */,
 			);
 			path = ExerciseList;
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 			children = (
 				3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */,
 				3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */,
+				3ACEA32F244F4DF80030E3DC /* WorkoutDetailModel.swift */,
 			);
 			path = WorkoutDetail;
 			sourceTree = "<group>";
@@ -170,6 +180,7 @@
 			children = (
 				3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */,
 				3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */,
+				3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */,
 			);
 			path = ExerciseDetail;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			children = (
 				3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */,
 				3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */,
+				3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -465,10 +477,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3E96A8244B57E600433E4E /* WorkoutDetail.swift in Sources */,
+				3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */,
 				3A182CD5244F095A001AE620 /* CategoryBadgeView.swift in Sources */,
 				3AE7D15E244E48EF00031884 /* WorkoutViewModelStub.swift in Sources */,
 				3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */,
 				3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */,
+				3ACEA332244F50870030E3DC /* ExerciseListModel.swift in Sources */,
 				3A694BE623FAE65B00DFF737 /* ExerciseListItemView.swift in Sources */,
 				3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */,
 				3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */,
@@ -480,6 +494,7 @@
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
 				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
 				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
+				3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */,
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
 				3AF7BEB3244E242100866A8C /* CategoryAPIMappers.swift in Sources */,
 				3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */,
@@ -488,6 +503,7 @@
 				3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */,
 				3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */,
 				3AF7BEB0244E237200866A8C /* GraphQLAPIMapper.swift in Sources */,
+				3ACEA330244F4DF80030E3DC /* WorkoutDetailModel.swift in Sources */,
 				3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */,
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
 				3AE7D15C244E3FA800031884 /* WorkoutAPIMappers.swift in Sources */,

@@ -22,7 +22,7 @@ fragment WorkoutDetailFragment on WorkoutType {
 fragment WorkoutExerciseFragment on WorkoutExerciseType {
   id
   exercise {
-    ...ExerciseDetailFragment
+    ...ExerciseListItemFragment
   }
   efforts {
     edges {

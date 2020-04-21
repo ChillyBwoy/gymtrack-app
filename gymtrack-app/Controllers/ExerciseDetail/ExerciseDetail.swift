@@ -9,15 +9,26 @@
 import SwiftUI
 
 struct ExerciseDetail: View {
-  var exercise: ExerciseDetailFragment
+  @ObservedObject private var model = ExerciseDetailModel()
+  var id: String
+
+  private func fetch() {
+    model.fetch(id: id)
+  }
 
   var body: some View {
-    Text(exercise.name)
+    VStack(alignment: .center) {
+      if model.exercise != nil {
+        Text(model.exercise!.name)
+      } else {
+        Text("Loading...")
+      }
+    }.onAppear(perform: fetch)
   }
 }
 
-//struct ExerciseDetail_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ExerciseDetail()
-//  }
-//}
+struct ExerciseDetail_Previews: PreviewProvider {
+  static var previews: some View {
+    ExerciseDetail(id: "RXhlcmNpc2VUeXBlOjEwNw==")
+  }
+}

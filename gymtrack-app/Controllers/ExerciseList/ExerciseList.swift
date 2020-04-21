@@ -10,30 +10,15 @@ import SwiftUI
 import Apollo
 
 struct ExerciseList: View {
-  @Environment(\.graphQLClient) var graphQLClient: ApolloClient
-  @State private var items: [ExerciseViewModel] = []
+  @ObservedObject private var model = ExerciseListModel()
 
   private func fetch() {
-    graphQLClient.fetch(query: ExerciseListQuery()) { result in
-      switch result {
-
-      case .success(let graphQLResult):
-        self.items = graphQLResult.data?.exercises?.edges.compactMap { edge in
-          if let fragment = edge?.node?.fragments.exerciseDetailFragment {
-            return ExerciseDetailGraphQLMapper(apiEntity: fragment).entity()
-          }
-          return nil
-        } ?? []
-
-      case .failure(let error):
-        print("Unable to load list of exercises: \(error)")
-      }
-    }
+    model.fetch()
   }
 
   var body: some View {
     VStack {
-      ExerciseListView(items: items)
+      ExerciseListView(items: model.items)
     }.onAppear(perform: fetch)
   }
 }

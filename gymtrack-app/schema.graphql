@@ -91,6 +91,7 @@ type ExerciseType implements Node {
   categories(before: String, after: String, first: Int, last: Int): CategoryTypeConnection!
   workoutSet(before: String, after: String, first: Int, last: Int, date_Gt: Date, date_Gte: Date, date_Lt: Date, date_Lte: Date, date: Date): WorkoutTypeConnection!
   workoutexerciseSet(before: String, after: String, first: Int, last: Int): WorkoutExerciseTypeConnection!
+  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection
 }
 
 type ExerciseTypeConnection {
@@ -170,3 +171,4 @@ type WorkoutTypeEdge {
   node: WorkoutType
   cursor: String!
 }
+

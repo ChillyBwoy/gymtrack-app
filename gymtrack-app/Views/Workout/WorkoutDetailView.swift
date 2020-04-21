@@ -11,13 +11,14 @@ import SwiftUI
 fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
   case byExercise = "Exercise"
   case byTime = "Time"
+  case byCategory = "Category"
 }
 
 struct WorkoutDetailView: View {
   var workout: WorkoutViewModel
-  @State private var opened = [String]()
+  @State private var activeItems = [String]()
   @State private var groupBy: WorkoutDetailGroupBy = .byExercise
-  
+
   private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .medium
@@ -25,10 +26,10 @@ struct WorkoutDetailView: View {
   }()
 
   private func onExerciseTap(_ id: String) {
-    if opened.contains(id) {
-      opened = opened.filter { $0 != id }
+    if activeItems.contains(id) {
+      activeItems = activeItems.filter { $0 != id }
     } else {
-      opened.append(id)
+      activeItems.append(id)
     }
   }
 
@@ -42,11 +43,11 @@ struct WorkoutDetailView: View {
             }
           }
           .pickerStyle(SegmentedPickerStyle())
-          .padding()
+          .padding(5)
           ForEach(workout.workoutexercises, id: \.id) { workoutExercise in
             WorkoutExerciseDetailView(
               workoutExercise: workoutExercise,
-              isOpen: self.opened.contains(workoutExercise.id)
+              isOpen: self.activeItems.contains(workoutExercise.id)
             )
             .padding(5)
             .onTapGesture {
@@ -70,6 +71,13 @@ struct WorkoutDetailView: View {
 
 struct WorkoutDetailView_Previews: PreviewProvider {
   static var previews: some View {
-    WorkoutDetailView(workout: WorkoutViewModelStub().detail())
+    Group {
+      WorkoutDetailView(
+        workout: WorkoutViewModelStub().detail()
+      ).colorScheme(.light)
+      WorkoutDetailView(
+        workout: WorkoutViewModelStub().detail()
+      ).colorScheme(.dark)
+    }
   }
 }

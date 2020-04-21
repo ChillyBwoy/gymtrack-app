@@ -198,6 +198,111 @@ public enum ExerciseUnit: RawRepresentable, Equatable, Hashable, CaseIterable, A
   }
 }
 
+public final class ExerciseDetailQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query ExerciseDetail($id: ID!) {
+      exercise(id: $id) {
+        __typename
+        ...ExerciseDetailFragment
+      }
+    }
+    """
+
+  public let operationName: String = "ExerciseDetail"
+
+  public var queryDocument: String { return operationDefinition.appending(ExerciseDetailFragment.fragmentDefinition).appending(EffortDetailFragment.fragmentDefinition).appending(CategoryDetailFragment.fragmentDefinition) }
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("exercise", arguments: ["id": GraphQLVariable("id")], type: .object(Exercise.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(exercise: Exercise? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "exercise": exercise.flatMap { (value: Exercise) -> ResultMap in value.resultMap }])
+    }
+
+    /// The ID of the object
+    public var exercise: Exercise? {
+      get {
+        return (resultMap["exercise"] as? ResultMap).flatMap { Exercise(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "exercise")
+      }
+    }
+
+    public struct Exercise: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["ExerciseType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLFragmentSpread(ExerciseDetailFragment.self),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var fragments: Fragments {
+        get {
+          return Fragments(unsafeResultMap: resultMap)
+        }
+        set {
+          resultMap += newValue.resultMap
+        }
+      }
+
+      public struct Fragments {
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public var exerciseDetailFragment: ExerciseDetailFragment {
+          get {
+            return ExerciseDetailFragment(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class ExerciseListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -209,7 +314,7 @@ public final class ExerciseListQuery: GraphQLQuery {
           __typename
           node {
             __typename
-            ...ExerciseDetailFragment
+            ...ExerciseListItemFragment
           }
         }
       }
@@ -218,7 +323,7 @@ public final class ExerciseListQuery: GraphQLQuery {
 
   public let operationName: String = "ExerciseList"
 
-  public var queryDocument: String { return operationDefinition.appending(ExerciseDetailFragment.fragmentDefinition).appending(CategoryDetailFragment.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending(ExerciseListItemFragment.fragmentDefinition).appending(CategoryDetailFragment.fragmentDefinition) }
 
   public init() {
   }
@@ -328,7 +433,7 @@ public final class ExerciseListQuery: GraphQLQuery {
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLFragmentSpread(ExerciseDetailFragment.self),
+            GraphQLFragmentSpread(ExerciseListItemFragment.self),
           ]
 
           public private(set) var resultMap: ResultMap
@@ -362,9 +467,9 @@ public final class ExerciseListQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public var exerciseDetailFragment: ExerciseDetailFragment {
+            public var exerciseListItemFragment: ExerciseListItemFragment {
               get {
-                return ExerciseDetailFragment(unsafeResultMap: resultMap)
+                return ExerciseListItemFragment(unsafeResultMap: resultMap)
               }
               set {
                 resultMap += newValue.resultMap
@@ -395,7 +500,7 @@ public final class WorkoutDetailQuery: GraphQLQuery {
 
   public let operationName: String = "WorkoutDetail"
 
-  public var queryDocument: String { return operationDefinition.appending(WorkoutDetailFragment.fragmentDefinition).appending(WorkoutExerciseFragment.fragmentDefinition).appending(ExerciseDetailFragment.fragmentDefinition).appending(CategoryDetailFragment.fragmentDefinition).appending(EffortDetailFragment.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending(WorkoutDetailFragment.fragmentDefinition).appending(WorkoutExerciseFragment.fragmentDefinition).appending(ExerciseListItemFragment.fragmentDefinition).appending(CategoryDetailFragment.fragmentDefinition).appending(EffortDetailFragment.fragmentDefinition) }
 
   public var id: GraphQLID
 
@@ -802,6 +907,375 @@ public struct ExerciseDetailFragment: GraphQLFragment {
   public static let fragmentDefinition: String =
     """
     fragment ExerciseDetailFragment on ExerciseType {
+      __typename
+      id
+      name
+      unit
+      efforts {
+        __typename
+        edges {
+          __typename
+          node {
+            __typename
+            ...EffortDetailFragment
+          }
+        }
+      }
+      categories {
+        __typename
+        edges {
+          __typename
+          node {
+            __typename
+            ...CategoryDetailFragment
+          }
+        }
+      }
+    }
+    """
+
+  public static let possibleTypes: [String] = ["ExerciseType"]
+
+  public static let selections: [GraphQLSelection] = [
+    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+    GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+    GraphQLField("name", type: .nonNull(.scalar(String.self))),
+    GraphQLField("unit", type: .nonNull(.scalar(ExerciseUnit.self))),
+    GraphQLField("efforts", type: .object(Effort.selections)),
+    GraphQLField("categories", type: .nonNull(.object(Category.selections))),
+  ]
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(id: GraphQLID, name: String, unit: ExerciseUnit, efforts: Effort? = nil, categories: Category) {
+    self.init(unsafeResultMap: ["__typename": "ExerciseType", "id": id, "name": name, "unit": unit, "efforts": efforts.flatMap { (value: Effort) -> ResultMap in value.resultMap }, "categories": categories.resultMap])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  /// The ID of the object.
+  public var id: GraphQLID {
+    get {
+      return resultMap["id"]! as! GraphQLID
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: String {
+    get {
+      return resultMap["name"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var unit: ExerciseUnit {
+    get {
+      return resultMap["unit"]! as! ExerciseUnit
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "unit")
+    }
+  }
+
+  public var efforts: Effort? {
+    get {
+      return (resultMap["efforts"] as? ResultMap).flatMap { Effort(unsafeResultMap: $0) }
+    }
+    set {
+      resultMap.updateValue(newValue?.resultMap, forKey: "efforts")
+    }
+  }
+
+  public var categories: Category {
+    get {
+      return Category(unsafeResultMap: resultMap["categories"]! as! ResultMap)
+    }
+    set {
+      resultMap.updateValue(newValue.resultMap, forKey: "categories")
+    }
+  }
+
+  public struct Effort: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["EffortTypeConnection"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("edges", type: .nonNull(.list(.object(Edge.selections)))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(edges: [Edge?]) {
+      self.init(unsafeResultMap: ["__typename": "EffortTypeConnection", "edges": edges.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } }])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    /// Contains the nodes in this connection.
+    public var edges: [Edge?] {
+      get {
+        return (resultMap["edges"] as! [ResultMap?]).map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } }, forKey: "edges")
+      }
+    }
+
+    public struct Edge: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["EffortTypeEdge"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("node", type: .object(Node.selections)),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(node: Node? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EffortTypeEdge", "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The item at the end of the edge
+      public var node: Node? {
+        get {
+          return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "node")
+        }
+      }
+
+      public struct Node: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["EffortType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLFragmentSpread(EffortDetailFragment.self),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, createdAt: String, value: Double, repeats: Int, failure: Bool) {
+          self.init(unsafeResultMap: ["__typename": "EffortType", "id": id, "createdAt": createdAt, "value": value, "repeats": repeats, "failure": failure])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var fragments: Fragments {
+          get {
+            return Fragments(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+
+        public struct Fragments {
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public var effortDetailFragment: EffortDetailFragment {
+            get {
+              return EffortDetailFragment(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+        }
+      }
+    }
+  }
+
+  public struct Category: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["CategoryTypeConnection"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("edges", type: .nonNull(.list(.object(Edge.selections)))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(edges: [Edge?]) {
+      self.init(unsafeResultMap: ["__typename": "CategoryTypeConnection", "edges": edges.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } }])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    /// Contains the nodes in this connection.
+    public var edges: [Edge?] {
+      get {
+        return (resultMap["edges"] as! [ResultMap?]).map { (value: ResultMap?) -> Edge? in value.flatMap { (value: ResultMap) -> Edge in Edge(unsafeResultMap: value) } }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: Edge?) -> ResultMap? in value.flatMap { (value: Edge) -> ResultMap in value.resultMap } }, forKey: "edges")
+      }
+    }
+
+    public struct Edge: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["CategoryTypeEdge"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("node", type: .object(Node.selections)),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(node: Node? = nil) {
+        self.init(unsafeResultMap: ["__typename": "CategoryTypeEdge", "node": node.flatMap { (value: Node) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The item at the end of the edge
+      public var node: Node? {
+        get {
+          return (resultMap["node"] as? ResultMap).flatMap { Node(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "node")
+        }
+      }
+
+      public struct Node: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["CategoryType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLFragmentSpread(CategoryDetailFragment.self),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, name: String, color: CategoryColor) {
+          self.init(unsafeResultMap: ["__typename": "CategoryType", "id": id, "name": name, "color": color])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var fragments: Fragments {
+          get {
+            return Fragments(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+
+        public struct Fragments {
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public var categoryDetailFragment: CategoryDetailFragment {
+            get {
+              return CategoryDetailFragment(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public struct ExerciseListItemFragment: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment ExerciseListItemFragment on ExerciseType {
       __typename
       id
       name
@@ -1229,7 +1703,7 @@ public struct WorkoutExerciseFragment: GraphQLFragment {
       id
       exercise {
         __typename
-        ...ExerciseDetailFragment
+        ...ExerciseListItemFragment
       }
       efforts {
         __typename
@@ -1305,7 +1779,7 @@ public struct WorkoutExerciseFragment: GraphQLFragment {
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLFragmentSpread(ExerciseDetailFragment.self),
+      GraphQLFragmentSpread(ExerciseListItemFragment.self),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -1339,9 +1813,9 @@ public struct WorkoutExerciseFragment: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public var exerciseDetailFragment: ExerciseDetailFragment {
+      public var exerciseListItemFragment: ExerciseListItemFragment {
         get {
-          return ExerciseDetailFragment(unsafeResultMap: resultMap)
+          return ExerciseListItemFragment(unsafeResultMap: resultMap)
         }
         set {
           resultMap += newValue.resultMap

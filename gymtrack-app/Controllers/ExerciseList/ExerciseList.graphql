@@ -2,7 +2,20 @@ query ExerciseList {
   exercises {
     edges {
       node {
-        ...ExerciseDetailFragment
+        ...ExerciseListItemFragment
+      }
+    }
+  }
+}
+
+fragment ExerciseListItemFragment on ExerciseType {
+  id
+  name
+  unit
+  categories {
+    edges {
+      node {
+        ...CategoryDetailFragment
       }
     }
   }

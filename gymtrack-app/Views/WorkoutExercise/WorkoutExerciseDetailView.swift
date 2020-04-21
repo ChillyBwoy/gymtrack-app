@@ -15,8 +15,7 @@ struct WorkoutExerciseDetailView: View {
   var body: some View {
     ZStack(alignment: .topLeading) {
       RoundedRectangle(cornerRadius: 10.0, style: .continuous)
-        .fill(Color(.systemBackground))
-        .shadow(color: Color(.systemGray4), radius: 4, x: 0, y: 3)
+        .fill(Color(.secondarySystemBackground))
 
       VStack(alignment: .leading) {
         HStack(alignment: .bottom, spacing: 4) {
@@ -24,9 +23,9 @@ struct WorkoutExerciseDetailView: View {
             CategoryBadgeView(category: category)
           }
         }
+
         Text("\(workoutExercise.exercise.name)")
-          .font(.subheadline)
-          .foregroundColor(Color(.systemGray))
+          .font(.headline)
         if isOpen {
           EffortListView(
             efforts: workoutExercise.efforts,
@@ -54,6 +53,13 @@ struct WorkoutExerciseDetailView_Previews: PreviewProvider {
         workoutExercise: WorkoutExerciseViewModelStub().detail(),
         isOpen: true
       ).padding()
+      
+      WorkoutExerciseDetailView(
+        workoutExercise: WorkoutExerciseViewModelStub().detail(),
+        isOpen: true
+      )
+      .padding()
+      .colorScheme(.dark)
     }.previewLayout(.fixed(width: 400, height: 250))
   }
 }

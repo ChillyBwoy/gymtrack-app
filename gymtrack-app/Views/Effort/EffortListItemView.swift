@@ -12,7 +12,7 @@ fileprivate struct EffortTextViewModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .font(.caption)
-      .foregroundColor(Color(.systemGray))
+      .foregroundColor(Color(UIColor.secondaryLabel))
   }
 }
 

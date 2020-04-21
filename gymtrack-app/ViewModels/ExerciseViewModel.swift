@@ -9,14 +9,16 @@
 struct ExerciseViewModel: ViewModel {
   var id: String
   var name: String
-  var unit: Unit
   var categories: [CategoryViewModel]
+  var efforts: [EffortViewModel]
+  var unit: Unit
   
-  init(id: String, name: String, unit: Unit, categories: [CategoryViewModel]) {
+  init(id: String, name: String, unit: Unit, categories: [CategoryViewModel], efforts: [EffortViewModel] = []) {
     self.id = id
     self.name = name
     self.unit = unit
     self.categories = categories
+    self.efforts = efforts
   }
   
   enum Unit: String, CaseIterable {
@@ -39,10 +41,11 @@ extension ExerciseViewModel {
     .check: .check
   ]
 
-  init(id: String, name: String, unit: ExerciseUnit, categories: [CategoryViewModel]) {
+  init(id: String, name: String, unit: ExerciseUnit, categories: [CategoryViewModel], efforts: [EffortViewModel] = []) {
     self.id = id
     self.name = name
     self.categories = categories
+    self.efforts = efforts
     self.unit = {
       if let newUnit = ExerciseViewModel.unitMap[unit] {
         return newUnit

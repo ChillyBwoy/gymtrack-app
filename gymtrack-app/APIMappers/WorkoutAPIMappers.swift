@@ -20,7 +20,7 @@ struct WorkoutexercisesDetailGraphQLMapper: GraphQLAPIMapper {
   var apiEntity: WorkoutExerciseFragment
 
   func entity() -> WorkoutExerciseViewModel? {
-    if let exercise = ExerciseDetailGraphQLMapper(apiEntity: apiEntity.exercise.fragments.exerciseDetailFragment).entity() {
+    if let exercise = ExerciseListItemGraphQLMapper(apiEntity: apiEntity.exercise.fragments.exerciseListItemFragment).entity() {
       let efforts: [EffortViewModel] = apiEntity.efforts.edges.compactMap { edge in
         if let fragment = edge?.node?.fragments.effortDetailFragment {
           return EffortDetailGraphQLMapper(apiEntity: fragment).entity()

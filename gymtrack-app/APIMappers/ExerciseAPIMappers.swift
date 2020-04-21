@@ -25,3 +25,23 @@ struct ExerciseDetailGraphQLMapper: GraphQLAPIMapper {
     )
   }
 }
+
+struct ExerciseListItemGraphQLMapper: GraphQLAPIMapper {
+  var apiEntity: ExerciseListItemFragment
+
+  func entity() -> ExerciseViewModel? {
+    let categories: [CategoryViewModel] = apiEntity.categories.edges.compactMap { edge in
+      if let fragment = edge?.node?.fragments.categoryDetailFragment {
+        return CategoryDetailGraphQLMapper(apiEntity: fragment).entity()
+      }
+      return nil
+    }
+
+    return ExerciseViewModel(
+      id: apiEntity.id,
+      name: apiEntity.name,
+      unit: apiEntity.unit,
+      categories: categories
+    )
+  }
+}

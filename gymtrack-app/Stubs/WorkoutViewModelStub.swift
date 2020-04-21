@@ -24,7 +24,7 @@ struct WorkoutExerciseViewModelStub: ViewModelStub {
       WorkoutExerciseViewModel(
         id: "\(index)",
         exercise: exercise,
-        efforts: self.effortViewModelStub.list())
+        efforts: effortViewModelStub.list(workoutsCount: 1, itemsPerDay: 7, valueRange: 8..<12))
     }
   }
 }

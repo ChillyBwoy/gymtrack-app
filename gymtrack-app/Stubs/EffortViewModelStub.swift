@@ -18,7 +18,7 @@ struct EffortViewModelStub: ViewModelStub {
       repeats: 10,
       failure: false)
   }
-  
+
   func list() -> [EffortViewModel] {
     let date = Date()
     let calendar = Calendar.current
@@ -67,5 +67,27 @@ struct EffortViewModelStub: ViewModelStub {
         repeats: 6,
         failure: true),
     ]
+  }
+  
+  func list(workoutsCount: Int, itemsPerDay: Int, valueRange: Range<Double>) -> [EffortViewModel] {
+    var result = [EffortViewModel]()
+    let calendar = Calendar.current
+    var date = Date()
+
+    for i in 0 ..< workoutsCount {
+      for j in 0 ..< itemsPerDay {
+        let effort = EffortViewModel(
+          id: "\(i)-\(j)",
+          createdAt: date,
+          value: Double.random(in: valueRange),
+          repeats: Int.random(in: 10 ... 15),
+          failure: false)
+        result.append(effort)
+      }
+
+      date = calendar.date(byAdding: .day, value: 3, to: date)!
+    }
+    
+    return result
   }
 }

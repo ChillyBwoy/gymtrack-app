@@ -10,29 +10,17 @@ import Apollo
 import SwiftUI
 
 struct WorkoutDetail: View {
-  @Environment(\.graphQLClient) private var graphQLClient: ApolloClient
   var id: String
-  @State private var entity: WorkoutViewModel? = nil
+  @ObservedObject private var model = WorkoutDetailModel()
 
   private func fetch() {
-    graphQLClient.fetch(query: WorkoutDetailQuery(id: id)) { result in
-      switch result {
-
-      case .success(let graphQLResult):
-        if let fragment = graphQLResult.data?.workout?.fragments.workoutDetailFragment {
-          self.entity = WorkoutDetailGraphQLMapper(apiEntity: fragment).entity()
-        }
-
-      case .failure(let error):
-        print("Unable to load list of workouts: \(error)")
-      }
-    }
+    model.fetch(id: id)
   }
 
   var body: some View {
     VStack(alignment: .center) {
-      if entity != nil {
-        WorkoutDetailView(workout: entity!)
+      if model.workout != nil {
+        WorkoutDetailView(workout: model.workout!)
       } else {
         Text("Loading...")
       }

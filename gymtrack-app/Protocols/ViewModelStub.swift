@@ -17,10 +17,6 @@ protocol ViewModelStub {
 }
 
 extension ViewModelStub {
-  func list() -> [Entity] {
-    return []
-  }
-  
   func shuffle() -> [Entity] {
     var arr = list()
     arr.shuffle()
