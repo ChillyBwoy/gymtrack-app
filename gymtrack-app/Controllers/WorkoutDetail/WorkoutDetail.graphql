@@ -1,0 +1,34 @@
+query WorkoutDetail($id: ID!) {
+  workout(id: $id) {
+    ...WorkoutDetailFragment
+  }
+  lastWorkout {
+    ...WorkoutDetailFragment
+  }
+}
+
+fragment WorkoutDetailFragment on WorkoutType {
+  id
+  date
+  workoutexercises {
+    edges {
+      node {
+        ...WorkoutExerciseFragment
+      }
+    }
+  }
+}
+
+fragment WorkoutExerciseFragment on WorkoutExerciseType {
+  id
+  exercise {
+    ...ExerciseDetailFragment
+  }
+  efforts {
+    edges {
+      node {
+        ...EffortDetailFragment
+      }
+    }
+  }
+}

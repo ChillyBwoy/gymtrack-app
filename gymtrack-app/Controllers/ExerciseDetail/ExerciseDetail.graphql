@@ -1,0 +1,12 @@
+fragment ExerciseDetailFragment on ExerciseType {
+  id
+  name
+  unit
+  categories {
+    edges {
+      node {
+        ...CategoryDetailFragment
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+fragment EffortListItemFragment on EffortType {
+  id
+  createdAt
+  value
+  repeats
+  failure
+}

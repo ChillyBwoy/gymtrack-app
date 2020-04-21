@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A113DD923F9ED550020CCF7 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DD823F9ED550020CCF7 /* schema.json */; };
+		3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */; };
+		3A113DDE23F9EE150020CCF7 /* ExerciseList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */; };
+		3A18190B244B1EDD000982DF /* SwiftUIDateGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 3A18190A244B1EDD000982DF /* SwiftUIDateGrid */; };
+		3A182CD5244F095A001AE620 /* CategoryBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A182CD4244F095A001AE620 /* CategoryBadgeView.swift */; };
+		3A3553EE2448DE6500D485D6 /* WorkoutDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */; };
+		3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */; };
+		3A35540A2448E0AD00D485D6 /* ExerciseDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */; };
+		3A3E96A8244B57E600433E4E /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */; };
+		3A48389A23F9E09500D81883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48389923F9E09500D81883 /* AppDelegate.swift */; };
+		3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48389B23F9E09500D81883 /* SceneDelegate.swift */; };
+		3A48389E23F9E09500D81883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48389D23F9E09500D81883 /* ContentView.swift */; };
+		3A4838A023F9E09900D81883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A48389F23F9E09900D81883 /* Assets.xcassets */; };
+		3A4838A323F9E09900D81883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4838A223F9E09900D81883 /* Preview Assets.xcassets */; };
+		3A4838A623F9E09900D81883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4838A423F9E09900D81883 /* LaunchScreen.storyboard */; };
+		3A58BAF62447A37000029AA4 /* CategoryDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */; };
+		3A694BE623FAE65B00DFF737 /* ExerciseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */; };
+		3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */; };
+		3A8BC6C123F9E8360002AE42 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8BC6C023F9E8360002AE42 /* Apollo */; };
+		3AA1ED8E2448E2D8000A1B15 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1ED8D2448E2D8000A1B15 /* API.swift */; };
+		3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E33244B66E300E5C009 /* ExerciseList.swift */; };
+		3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E38244B98F500E5C009 /* WorkoutList.swift */; };
+		3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E66244E056200E5C009 /* ViewModelStub.swift */; };
+		3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA302244F11830030E3DC /* EffortListView.swift */; };
+		3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA304244F14260030E3DC /* EffortListItemView.swift */; };
+		3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */; };
+		3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */; };
+		3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */; };
+		3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */; };
+		3AE7D14A244E281F00031884 /* CategoryViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D149244E281F00031884 /* CategoryViewModelStub.swift */; };
+		3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */; };
+		3AE7D150244E3B4300031884 /* EffortDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7D14F244E3B4300031884 /* EffortDetail.graphql */; };
+		3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D151244E3BB200031884 /* EffortViewModel.swift */; };
+		3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D153244E3BC800031884 /* ViewModel.swift */; };
+		3AE7D156244E3C8100031884 /* EffortAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */; };
+		3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */; };
+		3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */; };
+		3AE7D15C244E3FA800031884 /* WorkoutAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */; };
+		3AE7D15E244E48EF00031884 /* WorkoutViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */; };
+		3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAA244E229900866A8C /* ExerciseViewModel.swift */; };
+		3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */; };
+		3AF7BEB0244E237200866A8C /* GraphQLAPIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAF244E237200866A8C /* GraphQLAPIMapper.swift */; };
+		3AF7BEB3244E242100866A8C /* CategoryAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A08473124279DA6000D8C81 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A113DD823F9ED550020CCF7 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExerciseList.graphql; sourceTree = "<group>"; };
+		3A182CD4244F095A001AE620 /* CategoryBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBadgeView.swift; sourceTree = "<group>"; };
+		3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WorkoutDetail.graphql; sourceTree = "<group>"; };
+		3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExerciseDetail.graphql; sourceTree = "<group>"; };
+		3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
+		3A40F39E244B06D000A256E6 /* SwiftUIDateGrid */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUIDateGrid; path = ../../github/SwiftUIDateGrid; sourceTree = "<group>"; };
+		3A48389623F9E09500D81883 /* gymtrack-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gymtrack-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A48389923F9E09500D81883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A48389B23F9E09500D81883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A48389D23F9E09500D81883 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A48389F23F9E09900D81883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A4838A223F9E09900D81883 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A4838A523F9E09900D81883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A4838A723F9E09900D81883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CategoryDetail.graphql; sourceTree = "<group>"; };
+		3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemView.swift; sourceTree = "<group>"; };
+		3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
+		3AA1ED8D2448E2D8000A1B15 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3AB86E33244B66E300E5C009 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
+		3AB86E38244B98F500E5C009 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
+		3AB86E66244E056200E5C009 /* ViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStub.swift; sourceTree = "<group>"; };
+		3ACEA302244F11830030E3DC /* EffortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListView.swift; sourceTree = "<group>"; };
+		3ACEA304244F14260030E3DC /* EffortListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListItemView.swift; sourceTree = "<group>"; };
+		3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseDetailView.swift; sourceTree = "<group>"; };
+		3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+graphQLClient.swift"; sourceTree = "<group>"; };
+		3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+EnvironmentKey.swift"; sourceTree = "<group>"; };
+		3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D149244E281F00031884 /* CategoryViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelStub.swift; sourceTree = "<group>"; };
+		3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModelStub.swift; sourceTree = "<group>"; };
+		3AE7D14F244E3B4300031884 /* EffortDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EffortDetail.graphql; sourceTree = "<group>"; };
+		3AE7D151244E3BB200031884 /* EffortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortViewModel.swift; sourceTree = "<group>"; };
+		3AE7D153244E3BC800031884 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortViewModelStub.swift; sourceTree = "<group>"; };
+		3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModelStub.swift; sourceTree = "<group>"; };
+		3AF7BEAA244E229900866A8C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		3AF7BEAF244E237200866A8C /* GraphQLAPIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLAPIMapper.swift; sourceTree = "<group>"; };
+		3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPIMappers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A48389323F9E09500D81883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A18190B244B1EDD000982DF /* SwiftUIDateGrid in Frameworks */,
+				3A8BC6C123F9E8360002AE42 /* Apollo in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A1671AC244723930037E3C7 /* ExerciseList */ = {
+			isa = PBXGroup;
+			children = (
+				3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */,
+				3AB86E33244B66E300E5C009 /* ExerciseList.swift */,
+			);
+			path = ExerciseList;
+			sourceTree = "<group>";
+		};
+		3A182CD2244F093D001AE620 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3ACEA30A244F1A320030E3DC /* Exercise */,
+				3ACEA309244F180F0030E3DC /* Workout */,
+				3ACEA306244F16380030E3DC /* WorkoutExercise */,
+				3ACEA301244F116B0030E3DC /* Effort */,
+				3A182CD3244F0948001AE620 /* Category */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A182CD3244F0948001AE620 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3A182CD4244F095A001AE620 /* CategoryBadgeView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3A3553EA2448DE2B00D485D6 /* WorkoutDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3A3553ED2448DE6500D485D6 /* WorkoutDetail.graphql */,
+				3A3E96A7244B57E600433E4E /* WorkoutDetail.swift */,
+			);
+			path = WorkoutDetail;
+			sourceTree = "<group>";
+		};
+		3A3554082448E08A00D485D6 /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3A3554092448E0AD00D485D6 /* ExerciseDetail.graphql */,
+				3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */,
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		3A40F39F244B070B00A256E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A48388D23F9E09500D81883 = {
+			isa = PBXGroup;
+			children = (
+				3A48389823F9E09500D81883 /* gymtrack-app */,
+				3A48389723F9E09500D81883 /* Products */,
+				3A40F39E244B06D000A256E6 /* SwiftUIDateGrid */,
+				3A40F39F244B070B00A256E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3A48389723F9E09500D81883 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A48389623F9E09500D81883 /* gymtrack-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A48389823F9E09500D81883 /* gymtrack-app */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D148244E27F800031884 /* Stubs */,
+				3AF7BEB1244E241100866A8C /* APIMappers */,
+				3AF7BEA9244E227E00866A8C /* ViewModels */,
+				3AB86E65244E055800E5C009 /* Protocols */,
+				3A182CD2244F093D001AE620 /* Views */,
+				3A694BE223FACA2C00DFF737 /* Controllers */,
+				3AE43D5923FC7B5000857BAB /* Extensions */,
+				3A113DD823F9ED550020CCF7 /* schema.json */,
+				3AA1ED8D2448E2D8000A1B15 /* API.swift */,
+				3A48389923F9E09500D81883 /* AppDelegate.swift */,
+				3A48389B23F9E09500D81883 /* SceneDelegate.swift */,
+				3A48389F23F9E09900D81883 /* Assets.xcassets */,
+				3A4838A423F9E09900D81883 /* LaunchScreen.storyboard */,
+				3A4838A723F9E09900D81883 /* Info.plist */,
+				3A4838A123F9E09900D81883 /* Preview Content */,
+			);
+			path = "gymtrack-app";
+			sourceTree = "<group>";
+		};
+		3A4838A123F9E09900D81883 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3A4838A223F9E09900D81883 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A694BE223FACA2C00DFF737 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A48389D23F9E09500D81883 /* ContentView.swift */,
+				3AA1ED8F2448E381000A1B15 /* CategoryDetail */,
+				3AE7D14E244E3B2E00031884 /* EffortDetail */,
+				3A3554082448E08A00D485D6 /* ExerciseDetail */,
+				3A1671AC244723930037E3C7 /* ExerciseList */,
+				3A3553EA2448DE2B00D485D6 /* WorkoutDetail */,
+				3AB86E35244B988F00E5C009 /* WorkoutList */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3AA1ED8F2448E381000A1B15 /* CategoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */,
+			);
+			path = CategoryDetail;
+			sourceTree = "<group>";
+		};
+		3AB86E35244B988F00E5C009 /* WorkoutList */ = {
+			isa = PBXGroup;
+			children = (
+				3AB86E38244B98F500E5C009 /* WorkoutList.swift */,
+			);
+			path = WorkoutList;
+			sourceTree = "<group>";
+		};
+		3AB86E65244E055800E5C009 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3AB86E66244E056200E5C009 /* ViewModelStub.swift */,
+				3AF7BEAF244E237200866A8C /* GraphQLAPIMapper.swift */,
+				3AE7D153244E3BC800031884 /* ViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3ACEA301244F116B0030E3DC /* Effort */ = {
+			isa = PBXGroup;
+			children = (
+				3ACEA302244F11830030E3DC /* EffortListView.swift */,
+				3ACEA304244F14260030E3DC /* EffortListItemView.swift */,
+			);
+			path = Effort;
+			sourceTree = "<group>";
+		};
+		3ACEA306244F16380030E3DC /* WorkoutExercise */ = {
+			isa = PBXGroup;
+			children = (
+				3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */,
+			);
+			path = WorkoutExercise;
+			sourceTree = "<group>";
+		};
+		3ACEA309244F180F0030E3DC /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				3A3553FF2448DFA700D485D6 /* WorkoutDetailView.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		3ACEA30A244F1A320030E3DC /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */,
+				3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		3AE43D5923FC7B5000857BAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */,
+				3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AE7D148244E27F800031884 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D149244E281F00031884 /* CategoryViewModelStub.swift */,
+				3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */,
+				3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */,
+				3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		3AE7D14E244E3B2E00031884 /* EffortDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D14F244E3B4300031884 /* EffortDetail.graphql */,
+			);
+			path = EffortDetail;
+			sourceTree = "<group>";
+		};
+		3AF7BEA9244E227E00866A8C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3AF7BEAA244E229900866A8C /* ExerciseViewModel.swift */,
+				3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */,
+				3AE7D151244E3BB200031884 /* EffortViewModel.swift */,
+				3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3AF7BEB1244E241100866A8C /* APIMappers */ = {
+			isa = PBXGroup;
+			children = (
+				3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */,
+				3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */,
+				3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */,
+				3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */,
+			);
+			path = APIMappers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A48389523F9E09500D81883 /* gymtrack-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A4838AA23F9E09900D81883 /* Build configuration list for PBXNativeTarget "gymtrack-app" */;
+			buildPhases = (
+				3A113DDF23F9EF2E0020CCF7 /* Generate Apollo GraphQL API */,
+				3A48389223F9E09500D81883 /* Sources */,
+				3A48389323F9E09500D81883 /* Frameworks */,
+				3A48389423F9E09500D81883 /* Resources */,
+				3A08473124279DA6000D8C81 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gymtrack-app";
+			packageProductDependencies = (
+				3A8BC6C023F9E8360002AE42 /* Apollo */,
+				3A18190A244B1EDD000982DF /* SwiftUIDateGrid */,
+			);
+			productName = "gymtrack-app";
+			productReference = 3A48389623F9E09500D81883 /* gymtrack-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A48388E23F9E09500D81883 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Eugene Cheltsov";
+				TargetAttributes = {
+					3A48389523F9E09500D81883 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 3A48389123F9E09500D81883 /* Build configuration list for PBXProject "gymtrack-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A48388D23F9E09500D81883;
+			packageReferences = (
+				3A8BC6BF23F9E8360002AE42 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
+			productRefGroup = 3A48389723F9E09500D81883 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A48389523F9E09500D81883 /* gymtrack-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A48389423F9E09500D81883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A113DD923F9ED550020CCF7 /* schema.json in Resources */,
+				3A58BAF62447A37000029AA4 /* CategoryDetail.graphql in Resources */,
+				3A113DDE23F9EE150020CCF7 /* ExerciseList.graphql in Resources */,
+				3A4838A623F9E09900D81883 /* LaunchScreen.storyboard in Resources */,
+				3A4838A323F9E09900D81883 /* Preview Assets.xcassets in Resources */,
+				3AE7D150244E3B4300031884 /* EffortDetail.graphql in Resources */,
+				3A4838A023F9E09900D81883 /* Assets.xcassets in Resources */,
+				3A35540A2448E0AD00D485D6 /* ExerciseDetail.graphql in Resources */,
+				3A3553EE2448DE6500D485D6 /* WorkoutDetail.graphql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A113DDF23F9EF2E0020CCF7 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/gymtrack-app/**/*.graphql",
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/gymtrack-app/API/**/*.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A48389223F9E09500D81883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3E96A8244B57E600433E4E /* WorkoutDetail.swift in Sources */,
+				3A182CD5244F095A001AE620 /* CategoryBadgeView.swift in Sources */,
+				3AE7D15E244E48EF00031884 /* WorkoutViewModelStub.swift in Sources */,
+				3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */,
+				3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */,
+				3A694BE623FAE65B00DFF737 /* ExerciseListItemView.swift in Sources */,
+				3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */,
+				3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */,
+				3A48389A23F9E09500D81883 /* AppDelegate.swift in Sources */,
+				3AE7D156244E3C8100031884 /* EffortAPIMappers.swift in Sources */,
+				3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */,
+				3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */,
+				3AE7D14A244E281F00031884 /* CategoryViewModelStub.swift in Sources */,
+				3AA1ED8E2448E2D8000A1B15 /* API.swift in Sources */,
+				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
+				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
+				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
+				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
+				3AF7BEB3244E242100866A8C /* CategoryAPIMappers.swift in Sources */,
+				3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */,
+				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
+				3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */,
+				3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */,
+				3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */,
+				3AF7BEB0244E237200866A8C /* GraphQLAPIMapper.swift in Sources */,
+				3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */,
+				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
+				3AE7D15C244E3FA800031884 /* WorkoutAPIMappers.swift in Sources */,
+				3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */,
+				3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */,
+				3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */,
+				3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3A4838A423F9E09900D81883 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A4838A523F9E09900D81883 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A4838A823F9E09900D81883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A4838A923F9E09900D81883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A4838AB23F9E09900D81883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"gymtrack-app/Preview Content\"";
+				DEVELOPMENT_TEAM = 9YQD9ZA92N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "gymtrack-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ok-so.gymtrack-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A4838AC23F9E09900D81883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"gymtrack-app/Preview Content\"";
+				DEVELOPMENT_TEAM = 9YQD9ZA92N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "gymtrack-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ok-so.gymtrack-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A48389123F9E09500D81883 /* Build configuration list for PBXProject "gymtrack-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4838A823F9E09900D81883 /* Debug */,
+				3A4838A923F9E09900D81883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A4838AA23F9E09900D81883 /* Build configuration list for PBXNativeTarget "gymtrack-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4838AB23F9E09900D81883 /* Debug */,
+				3A4838AC23F9E09900D81883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A8BC6BF23F9E8360002AE42 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.22.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A18190A244B1EDD000982DF /* SwiftUIDateGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUIDateGrid;
+		};
+		3A8BC6C023F9E8360002AE42 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A8BC6BF23F9E8360002AE42 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3A48388E23F9E09500D81883 /* Project object */;
+}

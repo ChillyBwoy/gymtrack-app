@@ -1,0 +1,7 @@
+fragment EffortDetailFragment on EffortType {
+  id
+  createdAt
+  value
+  repeats
+  failure
+}

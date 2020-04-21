@@ -1,0 +1,9 @@
+query ExerciseList {
+  exercises {
+    edges {
+      node {
+        ...ExerciseDetailFragment
+      }
+    }
+  }
+}
