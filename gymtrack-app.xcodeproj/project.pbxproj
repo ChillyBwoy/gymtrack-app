@@ -26,13 +26,14 @@
 		3A694BE623FAE65B00DFF737 /* ExerciseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */; };
 		3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */; };
 		3A8BC6C123F9E8360002AE42 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8BC6C023F9E8360002AE42 /* Apollo */; };
-		3AA1ED8E2448E2D8000A1B15 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1ED8D2448E2D8000A1B15 /* API.swift */; };
 		3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E33244B66E300E5C009 /* ExerciseList.swift */; };
 		3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E38244B98F500E5C009 /* WorkoutList.swift */; };
 		3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E66244E056200E5C009 /* ViewModelStub.swift */; };
 		3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA302244F11830030E3DC /* EffortListView.swift */; };
 		3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA304244F14260030E3DC /* EffortListItemView.swift */; };
 		3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */; };
+		3ACEA32C244F1F900030E3DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA32B244F1F900030E3DC /* API.swift */; };
+		3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEA32D244F1FB30030E3DC /* schema.graphql */; };
 		3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */; };
 		3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */; };
 		3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */; };
@@ -86,13 +87,14 @@
 		3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CategoryDetail.graphql; sourceTree = "<group>"; };
 		3A694BE523FAE65B00DFF737 /* ExerciseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemView.swift; sourceTree = "<group>"; };
 		3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
-		3AA1ED8D2448E2D8000A1B15 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3AB86E33244B66E300E5C009 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 		3AB86E38244B98F500E5C009 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		3AB86E66244E056200E5C009 /* ViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStub.swift; sourceTree = "<group>"; };
 		3ACEA302244F11830030E3DC /* EffortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListView.swift; sourceTree = "<group>"; };
 		3ACEA304244F14260030E3DC /* EffortListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListItemView.swift; sourceTree = "<group>"; };
 		3ACEA307244F16670030E3DC /* WorkoutExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseDetailView.swift; sourceTree = "<group>"; };
+		3ACEA32B244F1F900030E3DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3ACEA32D244F1FB30030E3DC /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+graphQLClient.swift"; sourceTree = "<group>"; };
 		3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+EnvironmentKey.swift"; sourceTree = "<group>"; };
 		3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPIMappers.swift; sourceTree = "<group>"; };
@@ -208,7 +210,8 @@
 				3A694BE223FACA2C00DFF737 /* Controllers */,
 				3AE43D5923FC7B5000857BAB /* Extensions */,
 				3A113DD823F9ED550020CCF7 /* schema.json */,
-				3AA1ED8D2448E2D8000A1B15 /* API.swift */,
+				3ACEA32D244F1FB30030E3DC /* schema.graphql */,
+				3ACEA32B244F1F900030E3DC /* API.swift */,
 				3A48389923F9E09500D81883 /* AppDelegate.swift */,
 				3A48389B23F9E09500D81883 /* SceneDelegate.swift */,
 				3A48389F23F9E09900D81883 /* Assets.xcassets */,
@@ -426,6 +429,7 @@
 				3AE7D150244E3B4300031884 /* EffortDetail.graphql in Resources */,
 				3A4838A023F9E09900D81883 /* Assets.xcassets in Resources */,
 				3A35540A2448E0AD00D485D6 /* ExerciseDetail.graphql in Resources */,
+				3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */,
 				3A3553EE2448DE6500D485D6 /* WorkoutDetail.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./Controllers/**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -473,7 +477,6 @@
 				3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */,
 				3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */,
 				3AE7D14A244E281F00031884 /* CategoryViewModelStub.swift in Sources */,
-				3AA1ED8E2448E2D8000A1B15 /* API.swift in Sources */,
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
 				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
 				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
@@ -491,6 +494,7 @@
 				3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */,
 				3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */,
 				3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */,
+				3ACEA32C244F1F900030E3DC /* API.swift in Sources */,
 				3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
