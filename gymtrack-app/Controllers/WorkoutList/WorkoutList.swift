@@ -11,6 +11,7 @@ import SwiftUIDateGrid
 
 struct WorkoutList: View {
   @State private var selectedDates: [Date] = []
+  @State private var date: Date = Date()
   
   private let theme: DateGridTheme = {
     let inst = DateGridTheme()
@@ -28,7 +29,7 @@ struct WorkoutList: View {
 
   var body: some View {
     DateGridView(
-      date: Date(),
+      date: $date,
       selectedDates: $selectedDates,
       theme: theme
     )

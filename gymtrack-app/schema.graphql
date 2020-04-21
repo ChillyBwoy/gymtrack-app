@@ -71,6 +71,7 @@ type EffortType implements Node {
   value: Float!
   repeats: Int!
   failure: Boolean!
+  exercise: ExerciseType
 }
 
 type EffortTypeConnection {
@@ -131,7 +132,7 @@ type Query {
   exercise(id: ID!): ExerciseType
   exercises(before: String, after: String, first: Int, last: Int): ExerciseTypeConnection
   effort(id: ID!): EffortType
-  efforts(before: String, after: String, first: Int, last: Int, workoutExercise_Exercise: ID, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection
+  efforts(before: String, after: String, first: Int, last: Int, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection
   lastWorkout: WorkoutType
   _debug: DjangoDebug
 }
@@ -140,7 +141,7 @@ type WorkoutExerciseType implements Node {
   id: ID!
   workout: WorkoutType!
   exercise: ExerciseType!
-  efforts(before: String, after: String, first: Int, last: Int, workoutExercise_Exercise: ID, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection!
+  efforts(before: String, after: String, first: Int, last: Int, createdAt_Gt: DateTime, createdAt_Gte: DateTime, createdAt_Lt: DateTime, createdAt_Lte: DateTime, createdAt: DateTime, createdAt_Date_Gt: DateTime, createdAt_Date_Gte: DateTime, createdAt_Date_Lt: DateTime, createdAt_Date_Lte: DateTime, createdAt_Date: DateTime): EffortTypeConnection!
 }
 
 type WorkoutExerciseTypeConnection {
@@ -159,6 +160,7 @@ type WorkoutType implements Node {
   date: Date!
   exercises(before: String, after: String, first: Int, last: Int): ExerciseTypeConnection!
   workoutexercises(before: String, after: String, first: Int, last: Int): WorkoutExerciseTypeConnection!
+  efforts(before: String, after: String, first: Int, last: Int): EffortTypeConnection
 }
 
 type WorkoutTypeConnection {

@@ -1,5 +1,5 @@
 //
-//  CategoryAPIMappers.swift
+//  CategoryDetailGraphQLMapper.swift
 //  gymtrack-app
 //
 //  Created by Eugene Cheltsov on 20.04.2020.

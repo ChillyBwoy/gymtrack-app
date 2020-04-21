@@ -9,18 +9,48 @@
 import Apollo
 import SwiftUI
 
-struct WorkoutDetail: View {
+fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
+  case byExercise = "Exercise"
+  case byTime = "Time"
+  case byCategory = "Category"
+}
+
+struct WorkoutDetail<Model>: View where Model: WorkoutDetailModel {
+  @ObservedObject var model: Model
   var id: String
-  @ObservedObject private var model = WorkoutDetailModel()
+  @State private var groupBy: WorkoutDetailGroupBy = .byExercise
+
+  private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    return formatter
+  }()
 
   private func fetch() {
     model.fetch(id: id)
   }
 
   var body: some View {
-    VStack(alignment: .center) {
+    NavigationView {
       if model.workout != nil {
-        WorkoutDetailView(workout: model.workout!)
+        VStack {
+          Picker(selection: $groupBy, label: Text("Group efforts by")) {
+            ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
+              Text("\(type.rawValue)").tag(type)
+            }
+          }
+          .pickerStyle(SegmentedPickerStyle())
+          .padding(.horizontal, 15)
+          .padding(.vertical, 5)
+         WorkoutDetailView(workout: model.workout!)
+          .padding(.horizontal, 10)
+          .navigationBarTitle(Text("\(model.workout!.date, formatter: self.dateFormatter)"))
+          .navigationBarItems(trailing: Button(action: {
+            
+          }) {
+            Image(systemName: "plus")
+          })
+        }
       } else {
         Text("Loading...")
       }
@@ -30,6 +60,11 @@ struct WorkoutDetail: View {
 
 struct WorkoutDetail_Previews: PreviewProvider {
   static var previews: some View {
-    WorkoutDetail(id: "V29ya291dFR5cGU6MTQ4")
+    Group {
+      WorkoutDetail(
+        model: WorkoutDetailModel_Previews(),
+        id: "V29ya291dFR5cGU6MTQ4")
+      .colorScheme(.light)
+    }
   }
 }

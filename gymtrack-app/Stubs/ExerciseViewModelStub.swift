@@ -24,6 +24,9 @@ struct ExerciseViewModelStub: ViewModelStub {
     let categoryStub = CategoryViewModelStub()
     let categories = categoryStub.list()
     let effortStub = EffortViewModelStub()
+    
+    let effortList_1 = effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 8..<12)
+    let effortList_2 = effortStub.list(workoutsCount: 5, itemsPerDay: 8, valueRange: 8..<12)
 
     return [
       ExerciseViewModel(
@@ -31,43 +34,36 @@ struct ExerciseViewModelStub: ViewModelStub {
         name: "Back Squats",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[0]],
-        efforts: effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 8..<12)),
+        efforts: effortList_1
+      ),
       ExerciseViewModel(
         id: "4",
         name: "Chin-ups",
         unit: ExerciseViewModel.Unit.step,
         categories: Array(categories[0...2]),
-        efforts: effortStub.list(workoutsCount: 30, itemsPerDay: 5, valueRange: 8..<15)),
+        efforts: effortList_1
+      ),
       ExerciseViewModel(
         id: "2",
         name: "Front Squats",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[0]],
-        efforts: effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 8..<12)),
+        efforts: effortList_1
+      ),
       ExerciseViewModel(
         id: "3",
         name: "Deadlift",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[1]],
-        efforts: effortStub.list(workoutsCount: 5, itemsPerDay: 8, valueRange: 8..<12)),
+        efforts: effortList_2
+      ),
       ExerciseViewModel(
         id: "5",
         name: "Bench Press",
         unit: ExerciseViewModel.Unit.weight,
         categories: [categories[2]],
-        efforts: effortStub.list(workoutsCount: 30, itemsPerDay: 8, valueRange: 6..<10)),
-      ExerciseViewModel(
-        id: "6",
-        name: "Running",
-        unit: ExerciseViewModel.Unit.distance,
-        categories: Array(categories[2...4]),
-        efforts: effortStub.list(workoutsCount: 20, itemsPerDay: 1, valueRange: 1..<1)),
-      ExerciseViewModel(
-        id: "7",
-        name: "Abs",
-        unit: ExerciseViewModel.Unit.check,
-        categories: Array(categories[4...6]),
-        efforts: effortStub.list(workoutsCount: 20, itemsPerDay: 1, valueRange: 1..<1)),
+        efforts: effortList_1
+      ),
     ]
   }
 }

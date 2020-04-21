@@ -8,22 +8,9 @@
 
 import SwiftUI
 
-fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
-  case byExercise = "Exercise"
-  case byTime = "Time"
-  case byCategory = "Category"
-}
-
 struct WorkoutDetailView: View {
   var workout: WorkoutViewModel
   @State private var activeItems = [String]()
-  @State private var groupBy: WorkoutDetailGroupBy = .byExercise
-
-  private let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    return formatter
-  }()
 
   private func onExerciseTap(_ id: String) {
     if activeItems.contains(id) {
@@ -34,37 +21,21 @@ struct WorkoutDetailView: View {
   }
 
   var body: some View {
-    NavigationView {
-      VStack(alignment: .leading) {
-        ScrollView(.vertical, showsIndicators: false) {
-          Picker(selection: $groupBy, label: Text("Group efforts by")) {
-            ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
-              Text("\(type.rawValue)").tag(type)
-            }
-          }
-          .pickerStyle(SegmentedPickerStyle())
+    VStack(alignment: .leading) {
+      ScrollView(.vertical, showsIndicators: false) {
+        ForEach(workout.workoutexercises, id: \.id) { workoutExercise in
+          WorkoutExerciseDetailView(
+            workoutExercise: workoutExercise,
+            isOpen: self.activeItems.contains(workoutExercise.id)
+          )
           .padding(5)
-          ForEach(workout.workoutexercises, id: \.id) { workoutExercise in
-            WorkoutExerciseDetailView(
-              workoutExercise: workoutExercise,
-              isOpen: self.activeItems.contains(workoutExercise.id)
-            )
-            .padding(5)
-            .onTapGesture {
-              withAnimation {
-                self.onExerciseTap(workoutExercise.id)
-              }
+          .onTapGesture {
+            withAnimation {
+              self.onExerciseTap(workoutExercise.id)
             }
           }
         }
       }
-      .padding(.horizontal, 10)
-      .navigationBarTitle(Text("\(workout.date, formatter: dateFormatter)"))
-      .navigationBarItems(trailing: Button(action: {
-        
-      }) {
-        Image(systemName: "plus")
-      })
     }
   }
 }

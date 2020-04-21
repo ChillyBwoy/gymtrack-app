@@ -40,21 +40,22 @@
 		3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */; };
 		3AE43D5B23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */; };
 		3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */; };
-		3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */; };
+		3AE7D147244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D146244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift */; };
 		3AE7D14A244E281F00031884 /* CategoryViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D149244E281F00031884 /* CategoryViewModelStub.swift */; };
 		3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */; };
 		3AE7D150244E3B4300031884 /* EffortDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7D14F244E3B4300031884 /* EffortDetail.graphql */; };
 		3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D151244E3BB200031884 /* EffortViewModel.swift */; };
 		3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D153244E3BC800031884 /* ViewModel.swift */; };
-		3AE7D156244E3C8100031884 /* EffortAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */; };
+		3AE7D156244E3C8100031884 /* EffortDetailGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D155244E3C8100031884 /* EffortDetailGraphQLMapper.swift */; };
 		3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */; };
 		3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */; };
-		3AE7D15C244E3FA800031884 /* WorkoutAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */; };
+		3AE7D15C244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D15B244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift */; };
 		3AE7D15E244E48EF00031884 /* WorkoutViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */; };
 		3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAA244E229900866A8C /* ExerciseViewModel.swift */; };
 		3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */; };
 		3AF7BEB0244E237200866A8C /* GraphQLAPIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEAF244E237200866A8C /* GraphQLAPIMapper.swift */; };
-		3AF7BEB3244E242100866A8C /* CategoryAPIMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */; };
+		3AF7BEB3244E242100866A8C /* CategoryDetailGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7BEB2244E242100866A8C /* CategoryDetailGraphQLMapper.swift */; };
+		3AFB5611244F6F6B0014E93F /* ExerciseListItemGraphQLMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB5610244F6F6B0014E93F /* ExerciseListItemGraphQLMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,21 +106,22 @@
 		3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		3AE43D5A23FC7B9000857BAB /* EnvironmentValues+graphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+graphQLClient.swift"; sourceTree = "<group>"; };
 		3AE43D5C23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+EnvironmentKey.swift"; sourceTree = "<group>"; };
-		3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D146244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailGraphQLMapper.swift; sourceTree = "<group>"; };
 		3AE7D149244E281F00031884 /* CategoryViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelStub.swift; sourceTree = "<group>"; };
 		3AE7D14B244E295300031884 /* ExerciseViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModelStub.swift; sourceTree = "<group>"; };
 		3AE7D14F244E3B4300031884 /* EffortDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EffortDetail.graphql; sourceTree = "<group>"; };
 		3AE7D151244E3BB200031884 /* EffortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortViewModel.swift; sourceTree = "<group>"; };
 		3AE7D153244E3BC800031884 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D155244E3C8100031884 /* EffortDetailGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortDetailGraphQLMapper.swift; sourceTree = "<group>"; };
 		3AE7D157244E3DA700031884 /* EffortViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortViewModelStub.swift; sourceTree = "<group>"; };
 		3AE7D159244E3ED800031884 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
-		3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutAPIMappers.swift; sourceTree = "<group>"; };
+		3AE7D15B244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailGraphQLMapper.swift; sourceTree = "<group>"; };
 		3AE7D15D244E48EF00031884 /* WorkoutViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModelStub.swift; sourceTree = "<group>"; };
 		3AF7BEAA244E229900866A8C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		3AF7BEAD244E232700866A8C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		3AF7BEAF244E237200866A8C /* GraphQLAPIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLAPIMapper.swift; sourceTree = "<group>"; };
-		3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPIMappers.swift; sourceTree = "<group>"; };
+		3AF7BEB2244E242100866A8C /* CategoryDetailGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailGraphQLMapper.swift; sourceTree = "<group>"; };
+		3AFB5610244F6F6B0014E93F /* ExerciseListItemGraphQLMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemGraphQLMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,12 +360,45 @@
 		3AF7BEB1244E241100866A8C /* APIMappers */ = {
 			isa = PBXGroup;
 			children = (
-				3AF7BEB2244E242100866A8C /* CategoryAPIMappers.swift */,
-				3AE7D146244E25CB00031884 /* ExerciseAPIMappers.swift */,
-				3AE7D155244E3C8100031884 /* EffortAPIMappers.swift */,
-				3AE7D15B244E3FA800031884 /* WorkoutAPIMappers.swift */,
+				3AFB5613244F6F990014E93F /* Workout */,
+				3AFB5612244F6F860014E93F /* Effort */,
+				3AFB560F244F6F430014E93F /* Exercise */,
+				3AFB560E244F6F320014E93F /* Category */,
 			);
 			path = APIMappers;
+			sourceTree = "<group>";
+		};
+		3AFB560E244F6F320014E93F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3AF7BEB2244E242100866A8C /* CategoryDetailGraphQLMapper.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3AFB560F244F6F430014E93F /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D146244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift */,
+				3AFB5610244F6F6B0014E93F /* ExerciseListItemGraphQLMapper.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		3AFB5612244F6F860014E93F /* Effort */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D155244E3C8100031884 /* EffortDetailGraphQLMapper.swift */,
+			);
+			path = Effort;
+			sourceTree = "<group>";
+		};
+		3AFB5613244F6F990014E93F /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7D15B244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,16 +522,17 @@
 				3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */,
 				3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */,
 				3A48389A23F9E09500D81883 /* AppDelegate.swift in Sources */,
-				3AE7D156244E3C8100031884 /* EffortAPIMappers.swift in Sources */,
+				3AE7D156244E3C8100031884 /* EffortDetailGraphQLMapper.swift in Sources */,
 				3AE43D5D23FC7BEE00857BAB /* ApolloClient+EnvironmentKey.swift in Sources */,
 				3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */,
+				3AFB5611244F6F6B0014E93F /* ExerciseListItemGraphQLMapper.swift in Sources */,
 				3AE7D14A244E281F00031884 /* CategoryViewModelStub.swift in Sources */,
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
 				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
 				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
 				3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */,
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
-				3AF7BEB3244E242100866A8C /* CategoryAPIMappers.swift in Sources */,
+				3AF7BEB3244E242100866A8C /* CategoryDetailGraphQLMapper.swift in Sources */,
 				3A3554002448DFA700D485D6 /* WorkoutDetailView.swift in Sources */,
 				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
 				3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */,
@@ -506,9 +542,9 @@
 				3ACEA330244F4DF80030E3DC /* WorkoutDetailModel.swift in Sources */,
 				3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */,
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
-				3AE7D15C244E3FA800031884 /* WorkoutAPIMappers.swift in Sources */,
+				3AE7D15C244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift in Sources */,
 				3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */,
-				3AE7D147244E25CB00031884 /* ExerciseAPIMappers.swift in Sources */,
+				3AE7D147244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift in Sources */,
 				3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */,
 				3ACEA32C244F1F900030E3DC /* API.swift in Sources */,
 				3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */,

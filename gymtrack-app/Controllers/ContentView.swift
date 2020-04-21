@@ -16,7 +16,10 @@ struct ContentView: View {
     GeometryReader { geometry in
       ZStack(alignment: .bottomLeading) {
         TabView {
-          WorkoutDetail(id: "").tabItem {
+          WorkoutDetail(
+            model: WorkoutDetailGraphQLModel(),
+            id: "V29ya291dFR5cGU6MTQ4"
+          ).tabItem {
             Image(systemName: "tray.2.fill")
             Text("Today")
           }.tag(1)
@@ -26,7 +29,7 @@ struct ContentView: View {
             Text("Workouts")
           }.tag(2)
 
-          ExerciseList().tabItem {
+          ExerciseList(model: ExerciseListGraphQLModel()).tabItem {
             Image(systemName: "list.bullet")
             Text("Exercises")
           }.tag(3)

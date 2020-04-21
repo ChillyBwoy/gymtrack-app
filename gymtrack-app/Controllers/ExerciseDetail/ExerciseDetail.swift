@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct ExerciseDetail: View {
-  @ObservedObject private var model = ExerciseDetailModel()
+struct ExerciseDetail<Model>: View where Model: ExerciseDetailModel {
+  @ObservedObject var model: Model
   var id: String
 
   private func fetch() {
@@ -19,7 +19,11 @@ struct ExerciseDetail: View {
   var body: some View {
     VStack(alignment: .center) {
       if model.exercise != nil {
-        Text(model.exercise!.name)
+        NavigationView {
+          ExerciseDetailView(exercise: model.exercise!)
+            .navigationBarTitle(Text(model.exercise!.name))
+            .navigationBarItems(trailing: EditButton())
+        }
       } else {
         Text("Loading...")
       }
@@ -29,6 +33,6 @@ struct ExerciseDetail: View {
 
 struct ExerciseDetail_Previews: PreviewProvider {
   static var previews: some View {
-    ExerciseDetail(id: "RXhlcmNpc2VUeXBlOjEwNw==")
+    ExerciseDetail(model: ExerciseDetailModel_Previews(), id: "")
   }
 }

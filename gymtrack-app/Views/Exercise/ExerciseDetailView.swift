@@ -12,14 +12,9 @@ struct ExerciseDetailView: View {
   var exercise: ExerciseViewModel
 
   var body: some View {
-    NavigationView {
-      VStack {
-        Text("Hello")
-      }
-      .navigationBarTitle(Text(exercise.name))
-      .navigationBarItems(trailing: EditButton())
+    VStack {
+      Text("Hello")
     }
-    
   }
 }
 

@@ -9,7 +9,13 @@
 import SwiftUI
 import Apollo
 
-class ExerciseListModel: ObservableObject {
+protocol ExerciseListModel: ObservableObject {
+  var items: [ExerciseViewModel] { get set }
+  
+  func fetch() -> Void
+}
+
+class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
   @Environment(\.graphQLClient) var graphQLClient: ApolloClient
   @Published var items: [ExerciseViewModel] = []
   
@@ -29,5 +35,13 @@ class ExerciseListModel: ObservableObject {
         print("Unable to load list of exercises: \(error)")
       }
     }
+  }
+}
+
+class ExerciseListModel_Previews: ObservableObject, ExerciseListModel {
+  @Published var items: [ExerciseViewModel] = []
+  
+  func fetch() {
+    self.items = ExerciseViewModelStub().list()
   }
 }

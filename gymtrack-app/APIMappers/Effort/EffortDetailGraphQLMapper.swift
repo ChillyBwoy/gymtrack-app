@@ -1,5 +1,5 @@
 //
-//  EffortAPIMappers.swift
+//  EffortDetailGraphQLMapper.swift
 //  gymtrack-app
 //
 //  Created by Eugene Cheltsov on 20.04.2020.

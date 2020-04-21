@@ -345,16 +345,6 @@
                 {
                   "defaultValue": null,
                   "description": null,
-                  "name": "workoutExercise_Exercise",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": null,
                   "name": "createdAt_Gt",
                   "type": {
                     "kind": "SCALAR",
@@ -642,6 +632,59 @@
                   "name": "WorkoutExerciseTypeConnection",
                   "ofType": null
                 }
+              }
+            },
+            {
+              "args": [
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "before",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "after",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "first",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": null,
+                  "name": "last",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  }
+                }
+              ],
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "efforts",
+              "type": {
+                "kind": "OBJECT",
+                "name": "EffortTypeConnection",
+                "ofType": null
               }
             }
           ],
@@ -1931,16 +1974,6 @@
                 {
                   "defaultValue": null,
                   "description": null,
-                  "name": "workoutExercise_Exercise",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": null,
                   "name": "createdAt_Gt",
                   "type": {
                     "kind": "SCALAR",
@@ -2262,6 +2295,18 @@
                   "name": "Boolean",
                   "ofType": null
                 }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": null,
+              "isDeprecated": false,
+              "name": "exercise",
+              "type": {
+                "kind": "OBJECT",
+                "name": "ExerciseType",
+                "ofType": null
               }
             }
           ],
