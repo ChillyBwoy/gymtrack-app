@@ -8,16 +8,42 @@
 
 import SwiftUI
 
+fileprivate enum ExerciseListViewMode: String, CaseIterable {
+  case none = "All By Name"
+  case groupByCategory = "Group by Category"
+}
+
 struct ExerciseListView: View {
   var items: [ExerciseViewModel]
+  @State private var viewMode: ExerciseListViewMode = .none
 
   var body: some View {
-    VStack(alignment: .leading) {
-      List {
-        ForEach(items, id: \.id) { exercise in
-          ExerciseListItemView(exercise: exercise)
+    NavigationView {
+      VStack(alignment: .leading) {
+        Picker(selection: $viewMode, label: Text("show as")) {
+          ForEach(ExerciseListViewMode.allCases, id: \.self) { type in
+            Text("\(type.rawValue)").tag(type)
+          }
         }
-      }
+          .pickerStyle(SegmentedPickerStyle())
+          .padding()
+
+        List {
+          Section {
+            ForEach(items, id: \.id) { exercise in
+              NavigationLink(
+                destination: ExerciseDetailView(exercise: exercise)
+              ) {
+                Text(exercise.name)
+                  .font(.body)
+                  .lineLimit(nil)
+              }
+            }
+          }
+        }
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
+      }.navigationBarTitle(Text("Exercises"))
     }
   }
 }

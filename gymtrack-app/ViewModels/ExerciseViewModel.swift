@@ -6,14 +6,22 @@
 //  Copyright © 2020 Eugene Cheltsov. All rights reserved.
 //
 
-struct ExerciseViewModel: ViewModel {
-  var id: String
-  var name: String
-  var categories: [CategoryViewModel]
-  var efforts: [EffortViewModel]
-  var unit: Unit
-  
-  init(id: String, name: String, unit: Unit, categories: [CategoryViewModel], efforts: [EffortViewModel] = []) {
+import SwiftUI
+
+class ExerciseViewModel: ViewModel, ObservableObject {
+  @Published var id: String
+  @Published var name: String
+  @Published var categories: [CategoryViewModel]
+  @Published var efforts: [EffortViewModel]
+  @Published var unit: Unit
+
+  init(
+    id: String,
+    name: String,
+    unit: Unit,
+    categories: [CategoryViewModel] = [],
+    efforts: [EffortViewModel] = [])
+  {
     self.id = id
     self.name = name
     self.unit = unit
@@ -32,6 +40,25 @@ struct ExerciseViewModel: ViewModel {
 }
 
 extension ExerciseViewModel {
+  func groupEffortsByDate() -> [Date: [EffortViewModel]] {
+    let calendar = Calendar.current
+
+    let groups = efforts.reduce(into: [:], { ( acc: inout [Date: [EffortViewModel]], effort) in
+      let components = calendar.dateComponents([.year, .month, .day], from: effort.createdAt)
+      let key = calendar.date(from: components)!
+      var currList = acc[key] ?? []
+      currList.append(effort)
+      acc.updateValue(currList, forKey: key)
+    })
+    
+    return groups
+  }
+}
+
+/**
+ * Graphql Types support
+ */
+extension ExerciseViewModel {
   private static let unitMap: [ExerciseUnit: ExerciseViewModel.Unit] = [
     .none: .none,
     .weight: .weight,
@@ -41,17 +68,20 @@ extension ExerciseViewModel {
     .check: .check
   ]
 
-  init(id: String, name: String, unit: ExerciseUnit, categories: [CategoryViewModel], efforts: [EffortViewModel] = []) {
-    self.id = id
-    self.name = name
-    self.categories = categories
-    self.efforts = efforts
-    self.unit = {
+  convenience init(
+    id: String,
+    name: String,
+    unit: ExerciseUnit,
+    categories: [CategoryViewModel] = [],
+    efforts: [EffortViewModel] = []
+  ) {
+    let newUnit: ExerciseViewModel.Unit = {
       if let newUnit = ExerciseViewModel.unitMap[unit] {
         return newUnit
       }
-
       return .none
     }()
+
+    self.init(id: id, name: name, unit: newUnit, categories: categories, efforts: efforts)
   }
 }

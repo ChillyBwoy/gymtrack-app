@@ -41,8 +41,7 @@ struct WorkoutDetail<Model>: View where Model: WorkoutDetailModel {
               }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, 5)
-            .padding(.vertical, 5)
+            .padding(5)
            
             HStack {
               ForEach(model.workout!.categories, id: \.id) { category in

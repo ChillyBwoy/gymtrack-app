@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct CategoryViewModel: ViewModel {
-  let id: String
-  let name: String
-  let color: Color
+class CategoryViewModel: ViewModel, ObservableObject {
+  @Published var id: String
+  @Published var name: String
+  @Published var color: Color
   
   init(id: String, name: String, color: Color) {
     self.id = id
@@ -46,15 +46,15 @@ extension CategoryViewModel {
     .gray6: .systemGray6,
   ]
 
-  init(id: String, name: String, color: CategoryColor) {
-    self.id = id
-    self.name = name
-    self.color = {
+  convenience init(id: String, name: String, color: CategoryColor) {
+    let newColor: Color = {
       if let color = CategoryViewModel.colorMap[color] {
         return Color(color)
       }
 
       return Color(.black)
     }()
+
+    self.init(id: id, name: name, color: newColor)
   }
 }

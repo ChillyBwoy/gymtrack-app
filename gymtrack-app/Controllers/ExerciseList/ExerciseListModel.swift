@@ -15,7 +15,7 @@ protocol ExerciseListModel: ObservableObject {
   func fetch() -> Void
 }
 
-class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
+final class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
   @Environment(\.graphQLClient) var graphQLClient: ApolloClient
   @Published var items: [ExerciseViewModel] = []
   
@@ -38,7 +38,7 @@ class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
   }
 }
 
-class ExerciseListModel_Previews: ObservableObject, ExerciseListModel {
+final class ExerciseListModel_Previews: ObservableObject, ExerciseListModel {
   @Published var items: [ExerciseViewModel] = []
   
   func fetch() {

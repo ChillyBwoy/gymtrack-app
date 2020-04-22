@@ -6,8 +6,16 @@
 //  Copyright © 2020 Eugene Cheltsov. All rights reserved.
 //
 
-struct WorkoutExerciseViewModel: ViewModel {
-  var id: String
-  var exercise: ExerciseViewModel
-  var efforts: [EffortViewModel]
+import SwiftUI
+
+class WorkoutExerciseViewModel: ViewModel, ObservableObject {
+  @Published var id: String
+  @Published var exercise: ExerciseViewModel
+  @Published var efforts: [EffortViewModel]
+  
+  init(id: String, exercise: ExerciseViewModel, efforts: [EffortViewModel]) {
+    self.id = id
+    self.exercise = exercise
+    self.efforts = efforts
+  }
 }

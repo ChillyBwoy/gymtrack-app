@@ -6,6 +6,8 @@
 //  Copyright © 2020 Eugene Cheltsov. All rights reserved.
 //
 
-protocol ViewModel {
+import SwiftUI
+
+protocol ViewModel: ObservableObject {
   var id: String { get }
 }

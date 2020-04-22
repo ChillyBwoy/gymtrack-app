@@ -19,11 +19,7 @@ struct ExerciseDetail<Model>: View where Model: ExerciseDetailModel {
   var body: some View {
     VStack(alignment: .center) {
       if model.exercise != nil {
-        NavigationView {
-          ExerciseDetailView(exercise: model.exercise!)
-            .navigationBarTitle(Text(model.exercise!.name))
-            .navigationBarItems(trailing: EditButton())
-        }
+        ExerciseDetailView(exercise: model.exercise!)
       } else {
         Text("Loading...")
       }
@@ -33,6 +29,8 @@ struct ExerciseDetail<Model>: View where Model: ExerciseDetailModel {
 
 struct ExerciseDetail_Previews: PreviewProvider {
   static var previews: some View {
-    ExerciseDetail(model: ExerciseDetailModel_Previews(), id: "")
+    NavigationView {
+      ExerciseDetail(model: ExerciseDetailModel_Previews(), id: "")
+    }.colorScheme(.light)
   }
 }

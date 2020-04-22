@@ -6,13 +6,13 @@
 //  Copyright © 2020 Eugene Cheltsov. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
-struct WorkoutViewModel: ViewModel {
-  var id: String
-  var date: Date
-  var workoutexercises: [WorkoutExerciseViewModel]
-  var categories: [CategoryViewModel]
+class WorkoutViewModel: ViewModel, ObservableObject {
+  @Published var id: String
+  @Published var date: Date
+  @Published var workoutexercises: [WorkoutExerciseViewModel]
+  @Published var categories: [CategoryViewModel]
   
   init(id: String, date: Date, workoutexercises: [WorkoutExerciseViewModel], categories: [CategoryViewModel]) {
     self.id = id

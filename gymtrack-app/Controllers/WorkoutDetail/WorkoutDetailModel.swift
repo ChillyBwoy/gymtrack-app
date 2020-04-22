@@ -14,7 +14,7 @@ protocol WorkoutDetailModel: ObservableObject {
   func fetch(id: String) -> Void
 }
 
-class WorkoutDetailGraphQLModel: ObservableObject, WorkoutDetailModel {
+final class WorkoutDetailGraphQLModel: ObservableObject, WorkoutDetailModel {
   @Environment(\.graphQLClient) private var graphQLClient: ApolloClient
   @Published var workout: WorkoutViewModel? = nil
 
@@ -33,7 +33,7 @@ class WorkoutDetailGraphQLModel: ObservableObject, WorkoutDetailModel {
   }
 }
 
-class WorkoutDetailModel_Previews: ObservableObject, WorkoutDetailModel {
+final class WorkoutDetailModel_Previews: ObservableObject, WorkoutDetailModel {
   @Published var workout: WorkoutViewModel? = nil
 
   func fetch(id: String) {

@@ -24,10 +24,10 @@ struct ContentView: View {
             Text("Today")
           }.tag(1)
 
-          WorkoutList().tabItem {
-            Image(systemName: "calendar")
-            Text("Workouts")
-          }.tag(2)
+//          WorkoutList().tabItem {
+//            Image(systemName: "calendar")
+//            Text("Workouts")
+//          }.tag(2)
 
           ExerciseList(model: ExerciseListGraphQLModel()).tabItem {
             Image(systemName: "list.bullet")

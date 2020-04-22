@@ -9,23 +9,26 @@
 import UIKit
 
 struct ExerciseViewModelStub: ViewModelStub {
+  private let effortStub = EffortViewModelStub()
+  private let categoryStub = CategoryViewModelStub()
+
   func detail() -> ExerciseViewModel {
     let categoryStub = CategoryViewModelStub()
     let categories = Array(categoryStub.list()[0...2])
+    let efforts = effortStub.listForExercise()
 
     return ExerciseViewModel(
       id: "1",
       name: "Back Squats",
       unit: ExerciseViewModel.Unit.weight,
-      categories: categories)
+      categories: categories,
+      efforts: efforts)
   }
-  
+
   func list() -> [ExerciseViewModel] {
-    let categoryStub = CategoryViewModelStub()
     let categories = categoryStub.list()
-    let effortStub = EffortViewModelStub()
     
-    let effortList = effortStub.list(workoutsCount: 20, itemsPerDay: 4, valueRange: 50..<90)
+    let effortList = effortStub.listForExercise()
 
     return [
       ExerciseViewModel(

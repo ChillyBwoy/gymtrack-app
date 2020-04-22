@@ -17,9 +17,8 @@ struct ExerciseList<Model>: View where Model: ExerciseListModel {
   }
 
   var body: some View {
-    VStack {
-      ExerciseListView(items: model.items)
-    }.onAppear(perform: fetch)
+    ExerciseListView(items: model.items)
+      .onAppear(perform: fetch)
   }
 }
 
