@@ -8,18 +8,31 @@
 
 import SwiftUI
 
+fileprivate struct CategoryBadgeTextModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .font(.caption)
+      .foregroundColor(.white)
+  }
+}
+
 struct CategoryBadgeView: View {
   var category: CategoryViewModel
+  var label: Text?
 
   var body: some View {
     ZStack(alignment: .topLeading) {
       RoundedRectangle(cornerRadius: 4.0, style: .continuous)
         .fill(category.color)
-      Text(category.name)
-        .font(.caption)
-        .foregroundColor(.white)
-        .padding(.horizontal, 4)
-        .padding(.vertical, 2)
+      HStack(alignment: .center, spacing: 2) {
+        Text(category.name)
+          .modifier(CategoryBadgeTextModifier())
+        if label != nil {
+          label.modifier(CategoryBadgeTextModifier())
+        }
+      }
+      .padding(.horizontal, 4)
+      .padding(.vertical, 2)
     }.fixedSize(horizontal: true, vertical: true)
   }
 }

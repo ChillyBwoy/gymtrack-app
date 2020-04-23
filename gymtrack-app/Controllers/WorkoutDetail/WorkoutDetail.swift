@@ -34,20 +34,17 @@ struct WorkoutDetail<Model>: View where Model: WorkoutDetailModel {
     NavigationView {
       if model.workout != nil {
         ScrollView(.vertical, showsIndicators: false) {
-          VStack {
+          VStack(alignment: .leading, spacing: 20) {
             Picker(selection: $groupBy, label: Text("Group efforts by")) {
               ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
                 Text("\(type.rawValue)").tag(type)
               }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding(5)
-           
-            HStack {
-              ForEach(model.workout!.categories, id: \.id) { category in
-                CategoryBadgeView(category: category)
-              }
-            }
+            .padding(.horizontal, 5)
+            
+            WorkoutCategoriesView(workout: model.workout!)
+              .padding(.horizontal, 8)
             WorkoutExerciseListView(items: model.workout!.workoutexercises)
           }
         }

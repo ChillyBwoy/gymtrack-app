@@ -58,3 +58,15 @@ extension CategoryViewModel {
     self.init(id: id, name: name, color: newColor)
   }
 }
+
+extension CategoryViewModel: Hashable {
+  static func == (lhs: CategoryViewModel, rhs: CategoryViewModel) -> Bool {
+    lhs.id == rhs.id && lhs.name == rhs.name && lhs.color == rhs.color
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+    hasher.combine(name)
+    hasher.combine(color)
+  }
+}

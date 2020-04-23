@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0FB2072451F5C700631BE3 /* ExerciseProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */; };
+		3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */; };
 		3A113DD923F9ED550020CCF7 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DD823F9ED550020CCF7 /* schema.json */; };
 		3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */; };
 		3A113DDE23F9EE150020CCF7 /* ExerciseList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressView.swift; sourceTree = "<group>"; };
+		3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoriesView.swift; sourceTree = "<group>"; };
 		3A113DD823F9ED550020CCF7 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		3A113DDD23F9EE150020CCF7 /* ExerciseList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExerciseList.graphql; sourceTree = "<group>"; };
@@ -139,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0FB2082451F6E700631BE3 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
 		3A1671AC244723930037E3C7 /* ExerciseList */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +164,11 @@
 		3A182CD2244F093D001AE620 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3ACEA30A244F1A320030E3DC /* Exercise */,
-				3ACEA306244F16380030E3DC /* WorkoutExercise */,
-				3ACEA301244F116B0030E3DC /* Effort */,
 				3A182CD3244F0948001AE620 /* Category */,
+				3ACEA30A244F1A320030E3DC /* Exercise */,
+				3ACEA301244F116B0030E3DC /* Effort */,
+				3A0FB2082451F6E700631BE3 /* Workout */,
+				3ACEA306244F16380030E3DC /* WorkoutExercise */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +320,7 @@
 			children = (
 				3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */,
 				3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */,
+				3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -529,6 +543,7 @@
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
 				3AF7BEB3244E242100866A8C /* CategoryDetailGraphQLMapper.swift in Sources */,
 				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
+				3A0FB2072451F5C700631BE3 /* ExerciseProgressView.swift in Sources */,
 				3AE1FB65244F990400252C08 /* WorkoutExerciseListView.swift in Sources */,
 				3AE7D158244E3DA700031884 /* EffortViewModelStub.swift in Sources */,
 				3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */,
@@ -539,6 +554,7 @@
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
 				3AE7D15C244E3FA800031884 /* WorkoutDetailGraphQLMapper.swift in Sources */,
 				3AE1FB69244F9AE400252C08 /* WorkoutExerciseViewModel.swift in Sources */,
+				3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */,
 				3AE7D14C244E295300031884 /* ExerciseViewModelStub.swift in Sources */,
 				3AE7D147244E25CB00031884 /* ExerciseDetailGraphQLMapper.swift in Sources */,
 				3AE7D152244E3BB200031884 /* EffortViewModel.swift in Sources */,
