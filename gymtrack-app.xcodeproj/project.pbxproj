@@ -26,6 +26,7 @@
 		3A58BAF62447A37000029AA4 /* CategoryDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */; };
 		3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */; };
 		3A8BC6C123F9E8360002AE42 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8BC6C023F9E8360002AE42 /* Apollo */; };
+		3AA99F7A2454C8EB001D8403 /* gymtrack_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AA99F782454C8EB001D8403 /* gymtrack_app.xcdatamodeld */; };
 		3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E33244B66E300E5C009 /* ExerciseList.swift */; };
 		3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E38244B98F500E5C009 /* WorkoutList.swift */; };
 		3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E66244E056200E5C009 /* ViewModelStub.swift */; };
@@ -95,6 +96,7 @@
 		3A4838A723F9E09900D81883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CategoryDetail.graphql; sourceTree = "<group>"; };
 		3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
+		3AA99F792454C8EB001D8403 /* gymtrack-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "gymtrack-app.xcdatamodel"; sourceTree = "<group>"; };
 		3AB86E33244B66E300E5C009 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 		3AB86E38244B98F500E5C009 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		3AB86E66244E056200E5C009 /* ViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStub.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		3A48389823F9E09500D81883 /* gymtrack-app */ = {
 			isa = PBXGroup;
 			children = (
+				3AA99F7B2454C9FE001D8403 /* Models */,
 				3AE7D148244E27F800031884 /* Stubs */,
 				3AF7BEB1244E241100866A8C /* APIMappers */,
 				3AF7BEA9244E227E00866A8C /* ViewModels */,
@@ -245,6 +248,7 @@
 				3A4838A423F9E09900D81883 /* LaunchScreen.storyboard */,
 				3A4838A723F9E09900D81883 /* Info.plist */,
 				3A4838A123F9E09900D81883 /* Preview Content */,
+				3AA99F782454C8EB001D8403 /* gymtrack_app.xcdatamodeld */,
 			);
 			path = "gymtrack-app";
 			sourceTree = "<group>";
@@ -277,6 +281,13 @@
 				3A58BAF52447A37000029AA4 /* CategoryDetail.graphql */,
 			);
 			path = CategoryDetail;
+			sourceTree = "<group>";
+		};
+		3AA99F7B2454C9FE001D8403 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3AB86E35244B988F00E5C009 /* WorkoutList */ = {
@@ -539,6 +550,7 @@
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
 				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
 				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
+				3AA99F7A2454C8EB001D8403 /* gymtrack_app.xcdatamodeld in Sources */,
 				3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */,
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
 				3AF7BEB3244E242100866A8C /* CategoryDetailGraphQLMapper.swift in Sources */,
@@ -776,6 +788,19 @@
 			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3AA99F782454C8EB001D8403 /* gymtrack_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3AA99F792454C8EB001D8403 /* gymtrack-app.xcdatamodel */,
+			);
+			currentVersion = 3AA99F792454C8EB001D8403 /* gymtrack-app.xcdatamodel */;
+			path = gymtrack_app.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A48388E23F9E09500D81883 /* Project object */;
 }
