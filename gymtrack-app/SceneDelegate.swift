@@ -10,8 +10,8 @@ import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
   var window: UIWindow?
+  let dataManager = DataManager()
 
   func scene(
     _ scene: UIScene, willConnectTo session: UISceneSession,
@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Create the SwiftUI view that provides the window contents.
     let contentView = ContentView()
+      .environment(\.managedObjectContext, dataManager.context)
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {
