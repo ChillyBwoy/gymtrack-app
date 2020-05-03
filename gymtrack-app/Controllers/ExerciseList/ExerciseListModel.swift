@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Apollo
 
 protocol ExerciseListModel: ObservableObject {
   var items: [ExerciseViewModel] { get set }
@@ -15,30 +14,13 @@ protocol ExerciseListModel: ObservableObject {
   func fetch() -> Void
 }
 
-final class ExerciseListGraphQLModel: ObservableObject, ExerciseListModel {
-  @Environment(\.graphQLClient) var graphQLClient: ApolloClient
+final class ExerciseListDataModel: ObservableObject, ExerciseListModel {
   @Published var items: [ExerciseViewModel] = []
   
-  func fetch() {
-    graphQLClient.fetch(query: ExerciseListQuery()) { result in
-      switch result {
-
-      case .success(let graphQLResult):
-        self.items = graphQLResult.data?.exercises.edges.compactMap { edge in
-          if let fragment = edge?.node?.fragments.exerciseListItemFragment {
-            return ExerciseListItemGraphQLMapper(apiEntity: fragment).entity()
-          }
-          return nil
-        } ?? []
-
-      case .failure(let error):
-        print("Unable to load list of exercises: \(error)")
-      }
-    }
-  }
+  func fetch() {}
 }
 
-final class ExerciseListModel_Previews: ObservableObject, ExerciseListModel {
+final class ExerciseListDataModel_Previews: ObservableObject, ExerciseListModel {
   @Published var items: [ExerciseViewModel] = []
   
   func fetch() {

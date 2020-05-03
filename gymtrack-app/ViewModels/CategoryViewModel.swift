@@ -26,39 +26,6 @@ class CategoryViewModel: ViewModel, ObservableObject {
   }
 }
 
-extension CategoryViewModel {
-  private static let colorMap: [CategoryColor: UIColor] = [
-    .none: .black,
-    .blue: .systemBlue,
-    .green: .systemGreen,
-    .indigo: .systemIndigo,
-    .orange: .systemOrange,
-    .pink: .systemPink,
-    .purple: .systemPurple,
-    .red: .systemRed,
-    .teal: .systemTeal,
-    .yellow: .systemYellow,
-    .gray: .systemGray,
-    .gray2: .systemGray2,
-    .gray3: .systemGray3,
-    .gray4: .systemGray4,
-    .gray5: .systemGray5,
-    .gray6: .systemGray6,
-  ]
-
-  convenience init(id: String, name: String, color: CategoryColor) {
-    let newColor: Color = {
-      if let color = CategoryViewModel.colorMap[color] {
-        return Color(color)
-      }
-
-      return Color(.black)
-    }()
-
-    self.init(id: id, name: name, color: newColor)
-  }
-}
-
 extension CategoryViewModel: Hashable {
   static func == (lhs: CategoryViewModel, rhs: CategoryViewModel) -> Bool {
     lhs.id == rhs.id && lhs.name == rhs.name && lhs.color == rhs.color

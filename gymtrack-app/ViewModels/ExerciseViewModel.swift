@@ -54,34 +54,3 @@ extension ExerciseViewModel {
     return groups
   }
 }
-
-/**
- * Graphql Types support
- */
-extension ExerciseViewModel {
-  private static let unitMap: [ExerciseUnit: ExerciseViewModel.Unit] = [
-    .none: .none,
-    .weight: .weight,
-    .time: .time,
-    .step: .step,
-    .distance: .distance,
-    .check: .check
-  ]
-
-  convenience init(
-    id: String,
-    name: String,
-    unit: ExerciseUnit,
-    categories: [CategoryViewModel] = [],
-    efforts: [EffortViewModel] = []
-  ) {
-    let newUnit: ExerciseViewModel.Unit = {
-      if let newUnit = ExerciseViewModel.unitMap[unit] {
-        return newUnit
-      }
-      return .none
-    }()
-
-    self.init(id: id, name: name, unit: newUnit, categories: categories, efforts: efforts)
-  }
-}

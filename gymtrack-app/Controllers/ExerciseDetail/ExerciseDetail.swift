@@ -30,7 +30,7 @@ struct ExerciseDetail<Model>: View where Model: ExerciseDetailModel {
 struct ExerciseDetail_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      ExerciseDetail(model: ExerciseDetailModel_Previews(), id: "")
+      ExerciseDetail(model: ExerciseDetailDataModel_Previews(), id: "")
     }.colorScheme(.light)
   }
 }

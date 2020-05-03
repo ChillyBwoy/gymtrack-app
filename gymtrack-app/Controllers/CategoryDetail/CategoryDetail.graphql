@@ -1,5 +1,0 @@
-fragment CategoryDetailFragment on CategoryType {
-  id
-  name
-  color
-}

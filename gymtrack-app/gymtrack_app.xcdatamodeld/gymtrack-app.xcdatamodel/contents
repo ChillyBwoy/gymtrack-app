@@ -4,6 +4,7 @@
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="categories" inverseEntity="Exercise"/>
     </entity>
     <entity name="Effort" representedClassName="Effort" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -11,28 +12,33 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="repeats" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="workoutExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutExercise"/>
+        <relationship name="workoutExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="efforts" inverseEntity="WorkoutExercise"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="unit" optional="YES" attributeType="String"/>
-        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category"/>
+        <relationship name="workoutExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="esercise" inverseEntity="WorkoutExercise"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <relationship name="workoutExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="workout" inverseEntity="WorkoutExercise"/>
     </entity>
     <entity name="WorkoutExercise" representedClassName="WorkoutExercise" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="esercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise"/>
-        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout"/>
+        <relationship name="efforts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Effort" inverseName="workoutExercise" inverseEntity="Effort"/>
+        <relationship name="esercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workoutExercises" inverseEntity="Exercise"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="workoutExercises" inverseEntity="Workout"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="266.13671875" positionY="-1373.00390625" width="128" height="103"/>
-        <element name="Category" positionX="-0.68359375" positionY="-1322.5546875" width="128" height="88"/>
-        <element name="Workout" positionX="595.25390625" positionY="-1370.4765625" width="128" height="73"/>
-        <element name="Effort" positionX="485.94140625" positionY="-924.48828125" width="128" height="133"/>
-        <element name="WorkoutExercise" positionX="431.7421875" positionY="-1179.8125" width="128" height="88"/>
+        <element name="Category" positionX="-428.24609375" positionY="-1207.953125" width="128" height="103"/>
+        <element name="Effort" positionX="26.52734375" positionY="-925.55859375" width="128" height="133"/>
+        <element name="Exercise" positionX="-161.6328125" positionY="-1221.92578125" width="128" height="133"/>
+        <element name="Workout" positionX="375.22265625" positionY="-1344.92578125" width="128" height="103"/>
+        <element name="WorkoutExercise" positionX="90.8359375" positionY="-1136.015625" width="128" height="103"/>
     </elements>
 </model>

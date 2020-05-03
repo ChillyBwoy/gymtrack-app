@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Apollo
 
 struct ExerciseList<Model>: View where Model: ExerciseListModel {
   @ObservedObject var model: Model
@@ -24,6 +23,6 @@ struct ExerciseList<Model>: View where Model: ExerciseListModel {
 
 struct ExerciseListContainer_Previews: PreviewProvider {
   static var previews: some View {
-    ExerciseList(model: ExerciseListModel_Previews())
+    ExerciseList(model: ExerciseListDataModel_Previews())
   }
 }

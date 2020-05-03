@@ -6,7 +6,6 @@
 //  Copyright © 2020 Eugene Cheltsov. All rights reserved.
 //
 
-import Apollo
 import SwiftUI
 
 fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
@@ -66,11 +65,11 @@ struct WorkoutDetail_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       WorkoutDetail(
-        model: WorkoutDetailModel_Previews(),
+        model: WorkoutDetailDataModel_Previews(),
         id: "some-test-id")
       .colorScheme(.light)
       WorkoutDetail(
-        model: WorkoutDetailModel_Previews(),
+        model: WorkoutDetailDataModel_Previews(),
         id: "some-test-id")
       .colorScheme(.dark)
     }

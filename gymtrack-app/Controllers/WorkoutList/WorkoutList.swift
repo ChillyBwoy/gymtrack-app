@@ -7,32 +7,13 @@
 //
 
 import SwiftUI
-import SwiftUIDateGrid
 
 struct WorkoutList: View {
   @State private var selectedDates: [Date] = []
   @State private var date: Date = Date()
-  
-  private let theme: DateGridTheme = {
-    let inst = DateGridTheme()
-
-    inst.today = DateGridDayStyle(
-      background: Color(UIColor.systemOrange),
-      foregroundColor: .white)
-
-    inst.day = DateGridDayStyle(
-      background: .clear,
-      foregroundColor: .accentColor)
-
-    return inst
-  }()
 
   var body: some View {
-    DateGridView(
-      date: $date,
-      selectedDates: $selectedDates,
-      theme: theme
-    )
+    Text("WorkoutList")
   }
 }
 

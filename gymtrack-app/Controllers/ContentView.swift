@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftUIDateGrid
 
 struct ContentView: View {
   @State private var showAddEffortForm = false
@@ -17,7 +16,7 @@ struct ContentView: View {
       ZStack(alignment: .bottomLeading) {
         TabView {
           WorkoutDetail(
-            model: WorkoutDetailGraphQLModel(),
+            model: WorkoutDetailDataModel(),
             id: "V29ya291dFR5cGU6MTQ4"
           ).tabItem {
             Image(systemName: "tray.2.fill")
@@ -29,7 +28,7 @@ struct ContentView: View {
 //            Text("Workouts")
 //          }.tag(2)
 
-          ExerciseList(model: ExerciseListGraphQLModel()).tabItem {
+          ExerciseList(model: ExerciseListDataModel()).tabItem {
             Image(systemName: "list.bullet")
             Text("Exercises")
           }.tag(3)

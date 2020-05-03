@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CategoryViewModelStub: ViewModelStub {
   func detail() -> CategoryViewModel {
-    CategoryViewModel(id: "1", name: "First", color: CategoryColor.blue)
+    CategoryViewModel(id: "1", name: "First", color: Color.blue)
   }
   
   func list() -> [CategoryViewModel] {
