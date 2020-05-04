@@ -14,13 +14,24 @@ import CoreData
 public class WorkoutExercise: NSManagedObject {
   @NSManaged public var id: UUID
   @NSManaged public var efforts: NSOrderedSet
-  @NSManaged public var esercise: Exercise
+  @NSManaged public var exercise: Exercise
   @NSManaged public var workout: Workout
 }
 
 extension WorkoutExercise {
   @nonobjc public class func fetchRequest() -> NSFetchRequest<WorkoutExercise> {
     return NSFetchRequest<WorkoutExercise>(entityName: "WorkoutExercise")
+  }
+  
+  static func create(with context: NSManagedObjectContext, workout: Workout, exercise: Exercise) -> WorkoutExercise {
+    let entity = WorkoutExercise(context: context)
+
+    entity.id = UUID()
+    entity.efforts = []
+    entity.workout = workout
+    entity.exercise = exercise
+
+    return entity
   }
 }
 

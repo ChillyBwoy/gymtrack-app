@@ -15,14 +15,61 @@ public class Exercise: NSManagedObject {
   @NSManaged public var id: UUID
   @NSManaged public var name: String
   @NSManaged public var note: String
-  @NSManaged public var unit: String
   @NSManaged public var categories: NSSet
   @NSManaged public var workoutExercises: NSSet
+
+  var unit: ExerciseUnit {
+    set { setRawValue(forKey: "unit", value: newValue) }
+    get { rawValue(forKey: "unit")! }
+  }
 }
 
 extension Exercise {
   @nonobjc public class func fetchRequest() -> NSFetchRequest<Exercise> {
     return NSFetchRequest<Exercise>(entityName: "Exercise")
+  }
+  
+  @nonobjc class func fetchAll() -> NSFetchRequest<Exercise> {
+    let request: NSFetchRequest<Exercise> = Exercise.fetchRequest()
+    request.sortDescriptors = [
+      NSSortDescriptor(key: "name", ascending: true),
+    ]
+    return request
+  }
+  
+  static func create(with context: NSManagedObjectContext, name: String, unit: ExerciseUnit) -> Exercise {
+    let entity = Exercise(context: context)
+
+    entity.id = UUID()
+    entity.name = name
+    entity.note = ""
+    entity.unit = unit
+    entity.categories = []
+    entity.workoutExercises = []
+ 
+    return entity
+  }
+}
+
+extension Exercise {
+  func groupEffortsByDate() -> [Date: [Effort]] {
+    let calendar = Calendar.current
+  
+    let groups = workoutExercises.reduce(into: [:], {(acc: inout [Date: [Effort]], item) in
+      if let workoutExercise = item as? WorkoutExercise {
+        for effortItem in workoutExercise.efforts {
+          if let effort = effortItem as? Effort {
+            let components = calendar.dateComponents([.year, .month, .day], from: effort.createdAt)
+            let key = calendar.date(from: components)!
+            var currList = acc[key] ?? []
+            currList.append(effort)
+            acc.updateValue(currList, forKey: key)
+          }
+        }
+      }
+    })
+    
+    return groups
   }
 }
 

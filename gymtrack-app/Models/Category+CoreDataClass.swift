@@ -9,17 +9,17 @@
 
 import UIKit
 import CoreData
-import SwiftUI
 
 @objc(Category)
 public class Category: NSManagedObject {
   @NSManaged public var id: UUID
   @NSManaged public var name: String
+  @NSManaged public var exercises: NSSet
+  
   var color: CategoryColor {
     set { setRawValue(forKey: "color", value: newValue) }
     get { rawValue(forKey: "color")! }
   }
-  @NSManaged public var exercises: NSSet
 }
 
 extension Category {
@@ -32,6 +32,7 @@ extension Category {
     entity.id = UUID()
     entity.name = name
     entity.color = color
+    entity.exercises = []
 
     return entity
   }

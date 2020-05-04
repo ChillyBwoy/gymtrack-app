@@ -22,6 +22,17 @@ extension Workout {
   @nonobjc public class func fetchRequest() -> NSFetchRequest<Workout> {
     return NSFetchRequest<Workout>(entityName: "Workout")
   }
+  
+  static func create(with context: NSManagedObjectContext, date: Date) -> Workout {
+    let entity = Workout(context: context)
+
+    entity.id = UUID()
+    entity.date = date
+    entity.workoutExercises = []
+    entity.note = ""
+
+    return entity
+  }
 }
 
 // MARK: Generated accessors for workoutExercises

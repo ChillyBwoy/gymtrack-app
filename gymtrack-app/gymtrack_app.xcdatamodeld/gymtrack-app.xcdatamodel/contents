@@ -4,23 +4,23 @@
         <attribute name="color" attributeType="String" valueTransformerName=""/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="categories" inverseEntity="Exercise"/>
+        <relationship name="exercises" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="categories" inverseEntity="Exercise"/>
     </entity>
     <entity name="Effort" representedClassName="Effort" syncable="YES">
-        <attribute name="created_at" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="failure" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="repeats" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="workoutExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="efforts" inverseEntity="WorkoutExercise"/>
+        <relationship name="workoutExercise" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="efforts" inverseEntity="WorkoutExercise"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="note" attributeType="String"/>
         <attribute name="unit" attributeType="String"/>
-        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category"/>
-        <relationship name="workoutExercises" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutExercise" inverseName="esercise" inverseEntity="WorkoutExercise"/>
+        <relationship name="categories" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category"/>
+        <relationship name="workoutExercises" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutExercise" inverseName="exercise" inverseEntity="WorkoutExercise"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
@@ -31,12 +31,12 @@
     <entity name="WorkoutExercise" representedClassName="WorkoutExercise" syncable="YES">
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="efforts" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Effort" inverseName="workoutExercise" inverseEntity="Effort"/>
-        <relationship name="esercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workoutExercises" inverseEntity="Exercise"/>
+        <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workoutExercises" inverseEntity="Exercise"/>
         <relationship name="workout" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="workoutExercises" inverseEntity="Workout"/>
     </entity>
     <elements>
         <element name="Category" positionX="-428.24609375" positionY="-1207.953125" width="128" height="103"/>
-        <element name="Effort" positionX="97.46484375" positionY="-956.765625" width="128" height="133"/>
+        <element name="Effort" positionX="83.79296875" positionY="-922.94140625" width="128" height="133"/>
         <element name="Exercise" positionX="-162.109375" positionY="-1274.5859375" width="128" height="133"/>
         <element name="Workout" positionX="413.4140625" positionY="-1240.16015625" width="128" height="103"/>
         <element name="WorkoutExercise" positionX="134.98828125" positionY="-1239.47265625" width="128" height="103"/>

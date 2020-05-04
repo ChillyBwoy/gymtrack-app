@@ -15,23 +15,23 @@ struct ContentView: View {
     GeometryReader { geometry in
       ZStack(alignment: .bottomLeading) {
         TabView {
-          WorkoutDetail(
-            model: WorkoutDetailDataModel(),
-            id: "V29ya291dFR5cGU6MTQ4"
-          ).tabItem {
-            Image(systemName: "tray.2.fill")
-            Text("Today")
-          }.tag(1)
+//          WorkoutDetail(
+//            model: WorkoutDetailDataModel(),
+//            id: "V29ya291dFR5cGU6MTQ4"
+//          ).tabItem {
+//            Image(systemName: "tray.2.fill")
+//            Text("Today")
+//          }.tag(1)
 
-//          WorkoutList().tabItem {
-//            Image(systemName: "calendar")
-//            Text("Workouts")
-//          }.tag(2)
+          WorkoutList().tabItem {
+            Image(systemName: "calendar")
+            Text("Workouts")
+          }.tag(2)
 
-          ExerciseList(model: ExerciseListDataModel()).tabItem {
-            Image(systemName: "list.bullet")
-            Text("Exercises")
-          }.tag(3)
+//          ExerciseList(model: ExerciseListDataModel()).tabItem {
+//            Image(systemName: "list.bullet")
+//            Text("Exercises")
+//          }.tag(3)
         }
 
 //        Button(action: {

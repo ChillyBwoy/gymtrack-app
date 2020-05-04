@@ -25,6 +25,7 @@
 		3A4838A623F9E09900D81883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4838A423F9E09900D81883 /* LaunchScreen.storyboard */; };
 		3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */; };
 		3AA99F7A2454C8EB001D8403 /* gymtrack_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AA99F782454C8EB001D8403 /* gymtrack_app.xcdatamodeld */; };
+		3AB12D19246076520035E4E0 /* ExerciseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB12D18246076520035E4E0 /* ExerciseUnit.swift */; };
 		3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E33244B66E300E5C009 /* ExerciseList.swift */; };
 		3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E38244B98F500E5C009 /* WorkoutList.swift */; };
 		3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB86E66244E056200E5C009 /* ViewModelStub.swift */; };
@@ -34,7 +35,6 @@
 		3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEA32D244F1FB30030E3DC /* schema.graphql */; };
 		3ACEA330244F4DF80030E3DC /* WorkoutDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA32F244F4DF80030E3DC /* WorkoutDetailModel.swift */; };
 		3ACEA332244F50870030E3DC /* ExerciseListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA331244F50870030E3DC /* ExerciseListModel.swift */; };
-		3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */; };
 		3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */; };
 		3AE0FA51245F2BAB005774F7 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0FA50245F2BAB005774F7 /* DataProvider.swift */; };
 		3AE0FA53245F2C5D005774F7 /* DataManagerMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0FA52245F2C5D005774F7 /* DataManagerMemory.swift */; };
@@ -94,6 +94,7 @@
 		3A4838A723F9E09900D81883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		3AA99F792454C8EB001D8403 /* gymtrack-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "gymtrack-app.xcdatamodel"; sourceTree = "<group>"; };
+		3AB12D18246076520035E4E0 /* ExerciseUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseUnit.swift; sourceTree = "<group>"; };
 		3AB86E33244B66E300E5C009 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 		3AB86E38244B98F500E5C009 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		3AB86E66244E056200E5C009 /* ViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStub.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		3ACEA32D244F1FB30030E3DC /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		3ACEA32F244F4DF80030E3DC /* WorkoutDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailModel.swift; sourceTree = "<group>"; };
 		3ACEA331244F50870030E3DC /* ExerciseListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListModel.swift; sourceTree = "<group>"; };
-		3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailModel.swift; sourceTree = "<group>"; };
 		3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		3AE0FA50245F2BAB005774F7 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3AE0FA52245F2C5D005774F7 /* DataManagerMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMemory.swift; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				3A6DD1262448EDDD001215E7 /* ExerciseDetail.swift */,
-				3ACEA333244F5E510030E3DC /* ExerciseDetailModel.swift */,
 			);
 			path = ExerciseDetail;
 			sourceTree = "<group>";
@@ -277,9 +276,10 @@
 			isa = PBXGroup;
 			children = (
 				3A374F26245F47E100C4D0F3 /* CategoryColor.swift */,
+				3AB12D18246076520035E4E0 /* ExerciseUnit.swift */,
 				3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */,
-				3AE0FA7C245F39F3005774F7 /* Effort+CoreDataClass.swift */,
 				3AE0FA7E245F39F3005774F7 /* Exercise+CoreDataClass.swift */,
+				3AE0FA7C245F39F3005774F7 /* Effort+CoreDataClass.swift */,
 				3AE0FA82245F39F3005774F7 /* Workout+CoreDataClass.swift */,
 				3AE0FA84245F39F3005774F7 /* WorkoutExercise+CoreDataClass.swift */,
 			);
@@ -481,7 +481,6 @@
 				3AF7BEAE244E232700866A8C /* CategoryViewModel.swift in Sources */,
 				3AA99F7A2454C8EB001D8403 /* gymtrack_app.xcdatamodeld in Sources */,
 				3AE0FA95245F3BDF005774F7 /* CategoryStubProvider.swift in Sources */,
-				3ACEA334244F5E510030E3DC /* ExerciseDetailModel.swift in Sources */,
 				3A48389C23F9E09500D81883 /* SceneDelegate.swift in Sources */,
 				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
 				3AF4354B245E2002004FA24E /* DataManager.swift in Sources */,
@@ -491,6 +490,7 @@
 				3AF7BEAB244E229900866A8C /* ExerciseViewModel.swift in Sources */,
 				3AE7D15A244E3ED800031884 /* WorkoutViewModel.swift in Sources */,
 				3ACEA330244F4DF80030E3DC /* WorkoutDetailModel.swift in Sources */,
+				3AB12D19246076520035E4E0 /* ExerciseUnit.swift in Sources */,
 				3ACEA308244F16670030E3DC /* WorkoutExerciseDetailView.swift in Sources */,
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
 				3AE1FB69244F9AE400252C08 /* WorkoutExerciseViewModel.swift in Sources */,
