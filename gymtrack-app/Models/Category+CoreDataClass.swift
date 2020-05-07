@@ -11,10 +11,10 @@ import UIKit
 import CoreData
 
 @objc(Category)
-public class Category: NSManagedObject {
+public class Category: NSManagedObject, Identifiable {
   @NSManaged public var id: UUID
   @NSManaged public var name: String
-  @NSManaged public var exercises: NSSet
+  @NSManaged public var exercises: Set<Exercise>
   
   var color: CategoryColor {
     set { setRawValue(forKey: "color", value: newValue) }

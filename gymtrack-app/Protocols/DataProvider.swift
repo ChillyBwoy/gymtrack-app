@@ -14,6 +14,7 @@ protocol DataProvider: class {
   var persistentContainer: NSPersistentContainer { get }
   var context: NSManagedObjectContext { get }
   func save() -> Void
+  func saveAfter(fn: @escaping (_ manager: Self) -> Void) -> Void
 }
 
 extension DataProvider {
@@ -28,5 +29,10 @@ extension DataProvider {
         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
       }
     }
+  }
+  
+  func saveAfter(fn: @escaping (_ manager: Self) -> Void) -> Void {
+    fn(self)
+    save()
   }
 }

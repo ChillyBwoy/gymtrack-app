@@ -28,21 +28,21 @@ struct ExerciseListView: View {
           .pickerStyle(SegmentedPickerStyle())
           .padding()
 
-        List {
-          Section {
-            ForEach(items, id: \.id) { exercise in
-              NavigationLink(
-                destination: ExerciseDetailView(exercise: exercise)
-              ) {
-                Text(exercise.name)
-                  .font(.body)
-                  .lineLimit(nil)
-              }
-            }
-          }
-        }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+//        List {
+//          Section {
+//            ForEach(items, id: \.id) { exercise in
+//              NavigationLink(
+//                destination: ExerciseDetailView(exercise: exercise)
+//              ) {
+//                Text(exercise.name)
+//                  .font(.body)
+//                  .lineLimit(nil)
+//              }
+//            }
+//          }
+//        }
+//        .listStyle(GroupedListStyle())
+//        .environment(\.horizontalSizeClass, .regular)
       }.navigationBarTitle(Text("Exercises"))
     }
   }

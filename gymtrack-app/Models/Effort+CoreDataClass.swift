@@ -22,7 +22,11 @@ public class Effort: NSManagedObject {
 
 extension Effort {
   @nonobjc public class func fetchRequest() -> NSFetchRequest<Effort> {
-    return NSFetchRequest<Effort>(entityName: "Effort")
+    let request = NSFetchRequest<Effort>(entityName: "Effort")
+    request.sortDescriptors = [
+      NSSortDescriptor(key: "createdAT", ascending: true),
+    ]
+    return request
   }
 
   static func create(with context: NSManagedObjectContext, workoutExercise: WorkoutExercise, value: Double, repeats: Int16, failure: Bool) -> Effort {

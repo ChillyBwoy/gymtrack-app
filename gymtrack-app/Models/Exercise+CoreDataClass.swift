@@ -15,12 +15,20 @@ public class Exercise: NSManagedObject {
   @NSManaged public var id: UUID
   @NSManaged public var name: String
   @NSManaged public var note: String
-  @NSManaged public var categories: NSSet
-  @NSManaged public var workoutExercises: NSSet
+  @NSManaged public var categories: Set<Category>
+  @NSManaged public var workoutExercises: Set<WorkoutExercise>
 
   var unit: ExerciseUnit {
     set { setRawValue(forKey: "unit", value: newValue) }
     get { rawValue(forKey: "unit")! }
+  }
+  
+  var efforts: [Effort] {
+    get {
+      workoutExercises.reduce(into: [], {(acc: inout [Effort], workoutExercise) in
+        acc.append(contentsOf: workoutExercise.efforts)
+      })
+    }
   }
 }
 
@@ -54,19 +62,13 @@ extension Exercise {
 extension Exercise {
   func groupEffortsByDate() -> [Date: [Effort]] {
     let calendar = Calendar.current
-  
-    let groups = workoutExercises.reduce(into: [:], {(acc: inout [Date: [Effort]], item) in
-      if let workoutExercise = item as? WorkoutExercise {
-        for effortItem in workoutExercise.efforts {
-          if let effort = effortItem as? Effort {
-            let components = calendar.dateComponents([.year, .month, .day], from: effort.createdAt)
-            let key = calendar.date(from: components)!
-            var currList = acc[key] ?? []
-            currList.append(effort)
-            acc.updateValue(currList, forKey: key)
-          }
-        }
-      }
+
+    let groups = efforts.reduce(into: [:], { ( acc: inout [Date: [Effort]], effort) in
+      let components = calendar.dateComponents([.year, .month, .day], from: effort.createdAt)
+      let key = calendar.date(from: components)!
+      var currList = acc[key] ?? []
+      currList.append(effort)
+      acc.updateValue(currList, forKey: key)
     })
     
     return groups

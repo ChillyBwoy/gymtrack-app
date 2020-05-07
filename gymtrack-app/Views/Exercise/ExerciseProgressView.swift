@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct ExerciseProgressView: View {
-  let exercise: ExerciseViewModel
+  let exercise: Exercise
   let max: Double
 
-  init(exercise: ExerciseViewModel) {
+  init(exercise: Exercise) {
     self.exercise = exercise
     self.max = exercise.efforts.map { $0.value }.max() ?? 0
 
@@ -39,6 +39,16 @@ struct ExerciseProgressView: View {
 
 struct ExerciseProgressView_Previews: PreviewProvider {
   static var previews: some View {
-    ExerciseProgressView(exercise: ExerciseViewModelStub().detail())
+    let manager = DataManagerMemory()
+    let stubProvider = ExerciseStubProvider()
+    let exercise = stubProvider.one(manager: manager)
+
+    do {
+      try manager.context.save()
+    } catch {
+      print(error, error.localizedDescription)
+    }
+
+    return ExerciseProgressView(exercise: exercise)
   }
 }

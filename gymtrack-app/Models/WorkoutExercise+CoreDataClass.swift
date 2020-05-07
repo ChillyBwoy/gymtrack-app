@@ -13,7 +13,7 @@ import CoreData
 @objc(WorkoutExercise)
 public class WorkoutExercise: NSManagedObject {
   @NSManaged public var id: UUID
-  @NSManaged public var efforts: NSOrderedSet
+  @NSManaged public var efforts: Set<Effort>
   @NSManaged public var exercise: Exercise
   @NSManaged public var workout: Workout
 }

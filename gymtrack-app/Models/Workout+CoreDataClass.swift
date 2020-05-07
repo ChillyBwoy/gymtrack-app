@@ -15,7 +15,7 @@ public class Workout: NSManagedObject {
   @NSManaged public var date: Date
   @NSManaged public var id: UUID
   @NSManaged public var note: String
-  @NSManaged public var workoutExercises: NSSet
+  @NSManaged public var workoutExercises: Set<WorkoutExercise>
 }
 
 extension Workout {
@@ -32,6 +32,25 @@ extension Workout {
     entity.note = ""
 
     return entity
+  }
+}
+
+extension Workout {
+  func categoriesByExercies() -> [Category: Double] {
+    var total = 0
+
+    let result = workoutExercises.reduce(into: [:], { (acc: inout [Category: Int], workoutExercise) in
+      for category in workoutExercise.exercise.categories {
+        let count = acc[category] ?? 0
+        acc.updateValue(count + 1, forKey: category)
+        total += 1
+      }
+    })
+    
+    return result.reduce(into: [:]) { (acc: inout [Category: Double], item) in
+      let (key, value) = item
+      acc[key] = Double(value) / Double(total)
+    }
   }
 }
 

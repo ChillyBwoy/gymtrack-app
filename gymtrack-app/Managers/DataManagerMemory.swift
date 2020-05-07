@@ -9,7 +9,7 @@
 import CoreData
 import Foundation
 
-class DataManagerMemory: DataProvider {
+final class DataManagerMemory: DataProvider {
   private(set) var containerName: String
   private(set) var persistentContainer: NSPersistentContainer
   private(set) var context: NSManagedObjectContext
