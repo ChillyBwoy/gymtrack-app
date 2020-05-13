@@ -17,8 +17,8 @@ fileprivate struct EffortTextViewModifier: ViewModifier {
 }
 
 struct EffortListItemView: View {
-  var effort: EffortViewModel
-  var unit: ExerciseViewModel.Unit
+  var effort: Effort
+  var unit: ExerciseUnit
   
   private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -48,10 +48,16 @@ struct EffortListItemView: View {
 
 struct EffortListItemView_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      ForEach(ExerciseViewModel.Unit.allCases, id: \.self) { unit in
+    let manager = DataManagerMemory()
+    let stubProvider = EffortStubProvider(manager: manager)
+    let effort = stubProvider.one()
+    
+    manager.save()
+    
+    return Group {
+      ForEach(ExerciseUnit.allCases, id: \.self) { unit in
         EffortListItemView(
-          effort: EffortViewModelStub().detail(),
+          effort: effort,
           unit: unit)
         .previewLayout(.fixed(width: 300, height: 30))
       }

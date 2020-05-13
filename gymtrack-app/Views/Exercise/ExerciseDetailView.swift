@@ -27,27 +27,23 @@ struct ExerciseDetailView: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-//      if exercise.efforts.count > 0 {
-//        ExerciseProgressView(exercise: exercise)
-//          .frame(height: 160)
-//      }
+      if exercise.efforts.count > 0 {
+        ExerciseProgressView(exercise: exercise, width: 12)
+          .frame(height: 100)
+      }
       List {
         Section(header: Text("Settings")) {
           Picker(selection: $selectedUnit, label: Text("Measure")) {
-            ForEach(ExerciseViewModel.Unit.allCases, id: \.self) { type in
+            ForEach(ExerciseUnit.allCases, id: \.self) { type in
               Text("\(type.rawValue)").tag(type)
             }
           }
           TextField("Name of the exercise", text: $fieldName)
         }
-        Text("\(exercise.categories.count)")
         Section(header: Text("Categories")) {
           ForEach(Array(exercise.categories), id: \.id) { category in
             CategoryView(category: category)
           }.onDelete(perform: delete)
-//          ForEach(exercise.categories, id: \.id) { category in
-//            CategoryBadgeView(category: category)
-//          }.onDelete(perform: delete)
         }
       }
       .listStyle(GroupedListStyle())
@@ -61,8 +57,8 @@ struct ExerciseDetailView: View {
 struct ExerciseDetailView_Previews: PreviewProvider {
   static var previews: some View {
     let manager = DataManagerMemory()
-    let stubProvider = ExerciseStubProvider()
-    let exercise = stubProvider.one(manager: manager)
+    let stubProvider = ExerciseStubProvider(manager: manager)
+    let exercise = stubProvider.one()
     
     manager.save()
     

@@ -16,19 +16,24 @@ public class Exercise: NSManagedObject {
   @NSManaged public var name: String
   @NSManaged public var note: String
   @NSManaged public var categories: Set<Category>
-  @NSManaged public var workoutExercises: Set<WorkoutExercise>
+  @NSManaged public var efforts: Set<Effort>
 
   var unit: ExerciseUnit {
     set { setRawValue(forKey: "unit", value: newValue) }
     get { rawValue(forKey: "unit")! }
   }
   
-  var efforts: [Effort] {
-    get {
-      workoutExercises.reduce(into: [], {(acc: inout [Effort], workoutExercise) in
-        acc.append(contentsOf: workoutExercise.efforts)
-      })
-    }
+  convenience init(context: NSManagedObjectContext, name: String, unit: ExerciseUnit, note: String) {
+    self.init(context: context)
+    
+    self.id = UUID()
+    self.name = name
+    self.unit = unit
+    self.note = note
+  }
+  
+  convenience init(context: NSManagedObjectContext, name: String, unit: ExerciseUnit) {
+    self.init(context: context, name: name, unit: unit, note: "")
   }
 }
 
@@ -43,19 +48,6 @@ extension Exercise {
       NSSortDescriptor(key: "name", ascending: true),
     ]
     return request
-  }
-  
-  static func create(with context: NSManagedObjectContext, name: String, unit: ExerciseUnit) -> Exercise {
-    let entity = Exercise(context: context)
-
-    entity.id = UUID()
-    entity.name = name
-    entity.note = ""
-    entity.unit = unit
-    entity.categories = []
-    entity.workoutExercises = []
- 
-    return entity
   }
 }
 
@@ -90,17 +82,35 @@ extension Exercise {
   @NSManaged public func removeFromCategories(_ values: NSSet)
 }
 
-// MARK: Generated accessors for workoutExercises
+// MARK: Generated accessors for efforts
 extension Exercise {
-  @objc(addWorkoutExercisesObject:)
-  @NSManaged public func addToWorkoutExercises(_ value: WorkoutExercise)
+  @objc(insertObject:inEffortsAtIndex:)
+  @NSManaged public func insertIntoEfforts(_ value: Effort, at idx: Int)
 
-  @objc(removeWorkoutExercisesObject:)
-  @NSManaged public func removeFromWorkoutExercises(_ value: WorkoutExercise)
+  @objc(removeObjectFromEffortsAtIndex:)
+  @NSManaged public func removeFromEfforts(at idx: Int)
 
-  @objc(addWorkoutExercises:)
-  @NSManaged public func addToWorkoutExercises(_ values: NSSet)
+  @objc(insertEfforts:atIndexes:)
+  @NSManaged public func insertIntoEfforts(_ values: [Effort], at indexes: NSIndexSet)
 
-  @objc(removeWorkoutExercises:)
-  @NSManaged public func removeFromWorkoutExercises(_ values: NSSet)
+  @objc(removeEffortsAtIndexes:)
+  @NSManaged public func removeFromEfforts(at indexes: NSIndexSet)
+
+  @objc(replaceObjectInEffortsAtIndex:withObject:)
+  @NSManaged public func replaceEfforts(at idx: Int, with value: Effort)
+
+  @objc(replaceEffortsAtIndexes:withEfforts:)
+  @NSManaged public func replaceEfforts(at indexes: NSIndexSet, with values: [Effort])
+
+  @objc(addEffortsObject:)
+  @NSManaged public func addToEfforts(_ value: Effort)
+
+  @objc(removeEffortsObject:)
+  @NSManaged public func removeFromEfforts(_ value: Effort)
+
+  @objc(addEfforts:)
+  @NSManaged public func addToEfforts(_ values: NSOrderedSet)
+
+  @objc(removeEfforts:)
+  @NSManaged public func removeFromEfforts(_ values: NSOrderedSet)
 }

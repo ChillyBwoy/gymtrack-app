@@ -11,9 +11,11 @@ import SwiftUI
 struct ExerciseProgressView: View {
   let exercise: Exercise
   let max: Double
+  let width: Double
 
-  init(exercise: Exercise) {
+  init(exercise: Exercise, width: Double = 10.0) {
     self.exercise = exercise
+    self.width = width
     self.max = exercise.efforts.map { $0.value }.max() ?? 0
 
 //    let startDate = efforts.first?.createdAt
@@ -24,11 +26,12 @@ struct ExerciseProgressView: View {
     GeometryReader { geometry in
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(alignment: .bottom, spacing: 1) {
-          ForEach(self.exercise.efforts, id: \.id) { effort in
+          
+          ForEach(Array(self.exercise.efforts), id: \.id) { effort in
             Capsule()
-              .fill(Color(UIColor.systemBlue))
+              .fill(effort.failure ? Color(UIColor.systemRed) : Color(UIColor.systemBlue))
               .frame(
-                width: 10,
+                width: CGFloat(self.width),
                 height: CGFloat(effort.value) / CGFloat(self.max) * geometry.size.height)
           }
         }
@@ -40,8 +43,8 @@ struct ExerciseProgressView: View {
 struct ExerciseProgressView_Previews: PreviewProvider {
   static var previews: some View {
     let manager = DataManagerMemory()
-    let stubProvider = ExerciseStubProvider()
-    let exercise = stubProvider.one(manager: manager)
+    let stubProvider = ExerciseStubProvider(manager: manager)
+    let exercise = stubProvider.one()
 
     do {
       try manager.context.save()
@@ -49,6 +52,6 @@ struct ExerciseProgressView_Previews: PreviewProvider {
       print(error, error.localizedDescription)
     }
 
-    return ExerciseProgressView(exercise: exercise)
+    return ExerciseProgressView(exercise: exercise, width: 12)
   }
 }

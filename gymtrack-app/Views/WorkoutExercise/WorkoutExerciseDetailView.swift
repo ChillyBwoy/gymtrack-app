@@ -8,58 +8,58 @@
 
 import SwiftUI
 
-struct WorkoutExerciseDetailView: View {
-  var workoutExercise: WorkoutExerciseViewModel
-  var isOpen: Bool
-
-  var body: some View {
-    ZStack(alignment: .topLeading) {
-      RoundedRectangle(cornerRadius: 10.0, style: .continuous)
-        .fill(Color(.secondarySystemBackground))
-
-      VStack(alignment: .leading) {
-        HStack(alignment: .bottom, spacing: 4) {
-          ForEach(workoutExercise.exercise.categories, id: \.id) { category in
-            CategoryBadgeView(category: category)
-          }
-        }
-
-        Text("\(workoutExercise.exercise.name)")
-          .font(.headline)
-        if isOpen {
-          EffortListView(
-            efforts: workoutExercise.efforts,
-            unit: self.workoutExercise.exercise.unit
-          )
-          .transition(.asymmetric(insertion: .scale, removal: .opacity))
-        }
-      }
-      .padding(.horizontal, 10)
-      .padding(.vertical, 10)
-    }
-    .fixedSize(horizontal: false, vertical: true)
-  }
-}
-
-struct WorkoutExerciseDetailView_Previews: PreviewProvider {
-  static var previews: some View {
-    Group {
-      WorkoutExerciseDetailView(
-        workoutExercise: WorkoutExerciseViewModelStub().detail(),
-        isOpen: false
-      ).padding()
-
-      WorkoutExerciseDetailView(
-        workoutExercise: WorkoutExerciseViewModelStub().detail(),
-        isOpen: true
-      ).padding()
-      
-      WorkoutExerciseDetailView(
-        workoutExercise: WorkoutExerciseViewModelStub().detail(),
-        isOpen: true
-      )
-      .padding()
-      .colorScheme(.dark)
-    }.previewLayout(.fixed(width: 400, height: 250))
-  }
-}
+//struct WorkoutExerciseDetailView: View {
+//  var workoutExercise: WorkoutExerciseViewModel
+//  var isOpen: Bool
+//
+//  var body: some View {
+//    ZStack(alignment: .topLeading) {
+//      RoundedRectangle(cornerRadius: 10.0, style: .continuous)
+//        .fill(Color(.secondarySystemBackground))
+//
+//      VStack(alignment: .leading) {
+//        HStack(alignment: .bottom, spacing: 4) {
+//          ForEach(workoutExercise.exercise.categories, id: \.id) { category in
+//            CategoryBadgeView(category: category)
+//          }
+//        }
+//
+//        Text("\(workoutExercise.exercise.name)")
+//          .font(.headline)
+//        if isOpen {
+//          EffortListView(
+//            efforts: workoutExercise.efforts,
+//            unit: self.workoutExercise.exercise.unit
+//          )
+//          .transition(.asymmetric(insertion: .scale, removal: .opacity))
+//        }
+//      }
+//      .padding(.horizontal, 10)
+//      .padding(.vertical, 10)
+//    }
+//    .fixedSize(horizontal: false, vertical: true)
+//  }
+//}
+//
+//struct WorkoutExerciseDetailView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    Group {
+//      WorkoutExerciseDetailView(
+//        workoutExercise: WorkoutExerciseViewModelStub().detail(),
+//        isOpen: false
+//      ).padding()
+//
+//      WorkoutExerciseDetailView(
+//        workoutExercise: WorkoutExerciseViewModelStub().detail(),
+//        isOpen: true
+//      ).padding()
+//      
+//      WorkoutExerciseDetailView(
+//        workoutExercise: WorkoutExerciseViewModelStub().detail(),
+//        isOpen: true
+//      )
+//      .padding()
+//      .colorScheme(.dark)
+//    }.previewLayout(.fixed(width: 400, height: 250))
+//  }
+//}

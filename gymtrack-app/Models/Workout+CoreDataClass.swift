@@ -15,7 +15,18 @@ public class Workout: NSManagedObject {
   @NSManaged public var date: Date
   @NSManaged public var id: UUID
   @NSManaged public var note: String
-  @NSManaged public var workoutExercises: Set<WorkoutExercise>
+  @NSManaged public var efforts: Set<Effort>
+  
+  convenience init(context: NSManagedObjectContext, date: Date, note: String) {
+    self.init(context: context)
+    self.id = UUID()
+    self.date = date
+    self.note = note
+  }
+
+  convenience init(context: NSManagedObjectContext, date: Date) {
+    self.init(context: context, date: date, note: "")
+  }
 }
 
 extension Workout {
@@ -28,7 +39,6 @@ extension Workout {
 
     entity.id = UUID()
     entity.date = date
-    entity.workoutExercises = []
     entity.note = ""
 
     return entity
@@ -36,16 +46,25 @@ extension Workout {
 }
 
 extension Workout {
+  func categories() -> [Category] {
+    var seen: [UUID: Bool] = [:]
+    
+    return efforts.reduce(into: []) { (acc: inout [Category], effort) in
+      let categories = effort.exercise.categories.filter { seen.updateValue(true, forKey: $0.id) == nil }
+      acc.append(contentsOf: categories)
+    }
+  }
+
   func categoriesByExercies() -> [Category: Double] {
     var total = 0
-
-    let result = workoutExercises.reduce(into: [:], { (acc: inout [Category: Int], workoutExercise) in
-      for category in workoutExercise.exercise.categories {
+    
+    let result = efforts.reduce(into: [:]) { (acc: inout [Category: Int], effort) in
+      for category in effort.exercise.categories {
         let count = acc[category] ?? 0
         acc.updateValue(count + 1, forKey: category)
         total += 1
       }
-    })
+    }
     
     return result.reduce(into: [:]) { (acc: inout [Category: Double], item) in
       let (key, value) = item
@@ -54,17 +73,36 @@ extension Workout {
   }
 }
 
-// MARK: Generated accessors for workoutExercises
+// MARK: Generated accessors for efforts
 extension Workout {
-  @objc(addWorkoutExercisesObject:)
-  @NSManaged public func addToWorkoutExercises(_ value: WorkoutExercise)
+  @objc(insertObject:inEffortsAtIndex:)
+  @NSManaged public func insertIntoEfforts(_ value: Effort, at idx: Int)
 
-  @objc(removeWorkoutExercisesObject:)
-  @NSManaged public func removeFromWorkoutExercises(_ value: WorkoutExercise)
+  @objc(removeObjectFromEffortsAtIndex:)
+  @NSManaged public func removeFromEfforts(at idx: Int)
 
-  @objc(addWorkoutExercises:)
-  @NSManaged public func addToWorkoutExercises(_ values: NSSet)
+  @objc(insertEfforts:atIndexes:)
+  @NSManaged public func insertIntoEfforts(_ values: [Effort], at indexes: NSIndexSet)
 
-  @objc(removeWorkoutExercises:)
-  @NSManaged public func removeFromWorkoutExercises(_ values: NSSet)
+  @objc(removeEffortsAtIndexes:)
+  @NSManaged public func removeFromEfforts(at indexes: NSIndexSet)
+
+  @objc(replaceObjectInEffortsAtIndex:withObject:)
+  @NSManaged public func replaceEfforts(at idx: Int, with value: Effort)
+
+  @objc(replaceEffortsAtIndexes:withEfforts:)
+  @NSManaged public func replaceEfforts(at indexes: NSIndexSet, with values: [Effort])
+
+  @objc(addEffortsObject:)
+  @NSManaged public func addToEfforts(_ value: Effort)
+
+  @objc(removeEffortsObject:)
+  @NSManaged public func removeFromEfforts(_ value: Effort)
+
+  @objc(addEfforts:)
+  @NSManaged public func addToEfforts(_ values: NSOrderedSet)
+
+  @objc(removeEfforts:)
+  @NSManaged public func removeFromEfforts(_ values: NSOrderedSet)
+
 }

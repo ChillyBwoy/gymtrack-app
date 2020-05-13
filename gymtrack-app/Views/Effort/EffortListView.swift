@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct EffortListView: View {
-  var efforts: [EffortViewModel]
-  var unit: ExerciseViewModel.Unit
+  var efforts: [Effort]
+  var unit: ExerciseUnit
 
   var body: some View {
     VStack {
@@ -26,9 +26,15 @@ struct EffortListView: View {
 
 struct EffortListView_Previews: PreviewProvider {
   static var previews: some View {
-    EffortListView(
-      efforts: EffortViewModelStub().list(),
-      unit: ExerciseViewModelStub().detail().unit)
+    let manager = DataManagerMemory()
+    let stubProvider = EffortStubProvider(manager: manager)
+    let efforts = stubProvider.list()
+
+    manager.save()
+    
+    return EffortListView(
+      efforts: efforts,
+      unit: .weight)
     .previewLayout(.fixed(width: 400, height: 200))
   }
 }

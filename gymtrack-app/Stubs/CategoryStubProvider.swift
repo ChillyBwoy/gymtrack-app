@@ -10,14 +10,20 @@ import Foundation
 
 class CategoryStubProvider: StubProvider {
   typealias Item = Category
+  
+  let manager: DataProvider
 
-  func one(manager: DataProvider) -> Category {
-    Category.create(with: manager.context, name: "Default category", color: .blue)
+  required init(manager: DataProvider) {
+    self.manager = manager
+  }
+
+  func one() -> Category {
+    Category(context: manager.context, name: "Default category", color: .blue)
   }
   
-  func many(manager: DataProvider) -> [Category] {
+  func many() -> [Category] {
     CategoryColor.allCases.enumerated().map { (index, categoryColor) in
-      Category.create(with: manager.context, name: "Category \(index + 1)", color: categoryColor)
+      Category(context: manager.context, name: "Category \(index + 1)", color: categoryColor)
     }
   }
 }

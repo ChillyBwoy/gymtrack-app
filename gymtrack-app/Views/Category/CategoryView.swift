@@ -36,8 +36,8 @@ struct CategoryView: View {
 struct CategoryView_Previews: PreviewProvider {
   static var previews: some View {
     let dataManager = DataManagerMemory()
-    let stubProvider = CategoryStubProvider()
-    let categories = stubProvider.many(manager: dataManager)
+    let stubProvider = CategoryStubProvider(manager: dataManager)
+    let categories = stubProvider.many()
     
     return Group {
       ForEach(categories, id: \.id) { category in

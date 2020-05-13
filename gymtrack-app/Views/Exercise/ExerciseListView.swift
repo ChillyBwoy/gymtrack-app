@@ -14,7 +14,7 @@ fileprivate enum ExerciseListViewMode: String, CaseIterable {
 }
 
 struct ExerciseListView: View {
-  var items: [ExerciseViewModel]
+//  var items: [ExerciseViewModel]
   @State private var viewMode: ExerciseListViewMode = .none
 
   var body: some View {
@@ -47,9 +47,9 @@ struct ExerciseListView: View {
     }
   }
 }
-
-struct ExerciseListView_Previews: PreviewProvider {
-  static var previews: some View {
-    ExerciseListView(items: ExerciseViewModelStub().list())
-  }
-}
+//
+//struct ExerciseListView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    ExerciseListView(items: ExerciseViewModelStub().list())
+//  }
+//}

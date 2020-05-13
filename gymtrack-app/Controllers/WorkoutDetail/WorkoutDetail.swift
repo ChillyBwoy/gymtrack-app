@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-//fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
-//  case byExercise = "Exercise"
-//  case byTime = "Time"
-//  case byCategory = "Category"
-//}
-//
+fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
+  case byExercise = "Exercise"
+  case byTime = "Time"
+  case byCategory = "Category"
+}
+
 //struct WorkoutDetail<Model>: View where Model: WorkoutDetailModel {
 //  @ObservedObject var model: Model
 //  var id: String

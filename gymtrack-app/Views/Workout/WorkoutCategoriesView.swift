@@ -9,16 +9,16 @@
 import SwiftUI
 
 fileprivate struct WorkoutCategoriesProgressView: View {
-  var workout: WorkoutViewModel
-  var categoriesByExercies: [CategoryViewModel: Double]
+  var workout: Workout
+  var categoriesByExercies: [Category: Double]
 
   var body: some View {
     GeometryReader { geometry in
       HStack(alignment: .center, spacing: 0) {
-        ForEach(self.workout.categories, id: \.id) { category in
+        ForEach(Array(self.workout.categories()), id: \.id) { category in
           ZStack(alignment: .topLeading) {
             Rectangle()
-              .fill(category.color)
+              .fill(Color(category.color.value))
               .frame(height: 20)
           }.fixedSize(horizontal: false, vertical: true)
             .frame(width: CGFloat(self.categoriesByExercies[category]!) * geometry.size.width)
@@ -29,14 +29,14 @@ fileprivate struct WorkoutCategoriesProgressView: View {
 }
 
 fileprivate struct WorkoutCategoriesDetailView: View {
-  var workout: WorkoutViewModel
-  var categoriesByExercies: [CategoryViewModel: Double]
+  var workout: Workout
+  var categoriesByExercies: [Category: Double]
 
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(alignment: .center) {
-        ForEach(workout.categories, id: \.id) { category in
-          CategoryBadgeView(
+        ForEach(workout.categories(), id: \.id) { category in
+          CategoryView(
             category: category,
             label: Text("\((self.categoriesByExercies[category] ?? 0) * 100, specifier: "%.2f")%"))
         }
@@ -47,12 +47,12 @@ fileprivate struct WorkoutCategoriesDetailView: View {
 
 
 struct WorkoutCategoriesView: View {
-  var workout: WorkoutViewModel
-  var categoriesByExercies: [CategoryViewModel: Double]
+  var workout: Workout
+  var categoriesByExercies: [Category: Double]
 
   @State private var showDetails = false
   
-  init(workout: WorkoutViewModel) {
+  init(workout: Workout) {
     self.workout = workout
     self.categoriesByExercies = workout.categoriesByExercies()
   }
@@ -74,9 +74,15 @@ struct WorkoutCategoriesView: View {
   }
 }
 
+
 struct WorkoutCategoriesView_Previews: PreviewProvider {
   static var previews: some View {
-    WorkoutCategoriesView(workout: WorkoutViewModelStub().detail())
-    .padding()
+    let manager = DataManagerMemory()
+    let stubProvider = WorkoutStubProvider(manager: manager)
+    let workout = stubProvider.one()
+
+    manager.save()
+
+    return WorkoutCategoriesView(workout: workout).padding()
   }
 }

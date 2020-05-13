@@ -9,12 +9,16 @@
 protocol StubProvider {
   associatedtype Item
 
-  func one(manager: DataProvider) -> Item
-  func many(manager: DataProvider) -> [Item]
+  var manager: DataProvider { get }
+
+  init(manager: DataProvider)
+
+  func one() -> Item
+  func many() -> [Item]
 }
 
 extension StubProvider {
-  func many(manager _: DataProvider) -> [Item] {
+  func many() -> [Item] {
     []
   }
 }

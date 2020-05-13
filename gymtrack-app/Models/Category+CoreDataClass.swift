@@ -20,21 +20,18 @@ public class Category: NSManagedObject, Identifiable {
     set { setRawValue(forKey: "color", value: newValue) }
     get { rawValue(forKey: "color")! }
   }
+  
+  convenience init(context: NSManagedObjectContext, name: String, color: CategoryColor) {
+    self.init(context: context)
+    self.id = UUID()
+    self.name = name
+    self.color = color
+  }
 }
 
 extension Category {
   @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
     return NSFetchRequest<Category>(entityName: "Category")
-  }
-  
-  static func create(with context: NSManagedObjectContext, name: String, color: CategoryColor) -> Category {
-    let entity = Category(context: context)
-    entity.id = UUID()
-    entity.name = name
-    entity.color = color
-    entity.exercises = []
-
-    return entity
   }
 }
 
