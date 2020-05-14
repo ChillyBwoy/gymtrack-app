@@ -47,6 +47,7 @@
 		3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D153244E3BC800031884 /* ViewModel.swift */; };
 		3AEBAC0F246C7BE000D7D510 /* WorkoutStubProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC0E246C7BE000D7D510 /* WorkoutStubProvider.swift */; };
 		3AEBAC11246C91AC00D7D510 /* EffortStubProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */; };
+		3AEBAC13246DE1DA00D7D510 /* ExerciseStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC12246DE1DA00D7D510 /* ExerciseStat.swift */; };
 		3AF4354B245E2002004FA24E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4354A245E2002004FA24E /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		3AE7D153244E3BC800031884 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3AEBAC0E246C7BE000D7D510 /* WorkoutStubProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStubProvider.swift; sourceTree = "<group>"; };
 		3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortStubProvider.swift; sourceTree = "<group>"; };
+		3AEBAC12246DE1DA00D7D510 /* ExerciseStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStat.swift; sourceTree = "<group>"; };
 		3AF4354A245E2002004FA24E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 				3AE0FA7E245F39F3005774F7 /* Exercise+CoreDataClass.swift */,
 				3AE0FA7C245F39F3005774F7 /* Effort+CoreDataClass.swift */,
 				3AE0FA82245F39F3005774F7 /* Workout+CoreDataClass.swift */,
+				3AEBAC12246DE1DA00D7D510 /* ExerciseStat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				3AB86E34244B66E300E5C009 /* ExerciseList.swift in Sources */,
 				3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */,
 				3AB86E39244B98F500E5C009 /* WorkoutList.swift in Sources */,
+				3AEBAC13246DE1DA00D7D510 /* ExerciseStat.swift in Sources */,
 				3AE0FA53245F2C5D005774F7 /* DataManagerMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,12 +11,14 @@ import SwiftUI
 
 struct ExerciseDetailView: View {
   @Environment(\.editMode) var mode
-  var exercise: Exercise
+  private let exercise: Exercise
+  private let stat: ExerciseStat
   @State private var selectedUnit: ExerciseUnit
   @State private var fieldName: String
   
   init(exercise: Exercise) {
     self.exercise = exercise
+    self.stat = exercise.stat()
     self._selectedUnit = State(initialValue: exercise.unit)
     self._fieldName = State(initialValue: exercise.name)
   }
@@ -32,6 +34,11 @@ struct ExerciseDetailView: View {
           .frame(height: 100)
       }
       List {
+        Section(header: Text("Statistics")) {
+          Text("Best: \(stat.best, specifier: "%.2f")")
+          Text("Average: \(stat.average, specifier: "%.2f")")
+        }
+
         Section(header: Text("Settings")) {
           Picker(selection: $selectedUnit, label: Text("Measure")) {
             ForEach(ExerciseUnit.allCases, id: \.self) { type in
@@ -40,11 +47,13 @@ struct ExerciseDetailView: View {
           }
           TextField("Name of the exercise", text: $fieldName)
         }
+
         Section(header: Text("Categories")) {
           ForEach(Array(exercise.categories), id: \.id) { category in
             CategoryView(category: category)
           }.onDelete(perform: delete)
         }
+        
       }
       .listStyle(GroupedListStyle())
       .environment(\.horizontalSizeClass, .regular)

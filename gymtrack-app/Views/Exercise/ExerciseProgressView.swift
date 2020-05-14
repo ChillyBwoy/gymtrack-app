@@ -45,12 +45,8 @@ struct ExerciseProgressView_Previews: PreviewProvider {
     let manager = DataManagerMemory()
     let stubProvider = ExerciseStubProvider(manager: manager)
     let exercise = stubProvider.one()
-
-    do {
-      try manager.context.save()
-    } catch {
-      print(error, error.localizedDescription)
-    }
+    
+    manager.save()
 
     return ExerciseProgressView(exercise: exercise, width: 12)
   }

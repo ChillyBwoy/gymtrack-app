@@ -52,7 +52,7 @@ extension Exercise {
 }
 
 extension Exercise {
-  func groupEffortsByDate() -> [Date: [Effort]] {
+  func effortsGroupedByDate() -> [Date: [Effort]] {
     let calendar = Calendar.current
 
     let groups = efforts.reduce(into: [:], { ( acc: inout [Date: [Effort]], effort) in
@@ -64,6 +64,16 @@ extension Exercise {
     })
     
     return groups
+  }
+  
+  func stat() -> ExerciseStat {
+    let values: [Double] = efforts.map({ $0.value })
+    
+    let best = values.max() ?? 0
+    let median = values.sorted(by: <)[efforts.count / 2]
+    let average = values.reduce(0, +) / Double(efforts.count)
+    
+    return ExerciseStat(best: best, average: average, median: median)
   }
 }
 
