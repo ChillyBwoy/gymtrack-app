@@ -42,6 +42,7 @@ class WorkoutStubProvider: StubProvider {
     exercise5.addToCategories(category4)
     
     let _ = Effort(context: manager.context, workout: workout, exercise: exercise0, createdAt: date)
+
     let _ = Effort(context: manager.context, workout: workout, exercise: exercise1, createdAt: calendar.date(byAdding: .minute, value: 1, to: date)!, value: 5, repeats: 3)
 
     let _ = Effort(context: manager.context, workout: workout, exercise: exercise2, createdAt: calendar.date(byAdding: .minute, value: 10, to: date)!, value: 20, repeats: 15)

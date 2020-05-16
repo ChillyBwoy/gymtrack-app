@@ -54,10 +54,25 @@ extension Workout {
       acc.append(contentsOf: categories)
     }
   }
+  
+  func effortsByExercises() -> [(Exercise, [Effort])] {
+    let groups = Dictionary(grouping: efforts, by: { item in item.exercise})
+    
+    let sortedExercises: [Exercise] = groups.keys.sorted { (a, b) -> Bool in
+      if let effortA = groups[a]?[0], let effortB = groups[b]?[0] {
+        return effortA.createdAt.compare(effortB.createdAt) == .orderedAscending
+      }
+      return false
+    }
+    
+    return sortedExercises.map { exercise in
+      (exercise, groups[exercise] ?? [])
+    }
+  }
 
   func categoriesByExercies() -> [Category: Double] {
     var total = 0
-    
+
     let result = efforts.reduce(into: [:]) { (acc: inout [Category: Int], effort) in
       for category in effort.exercise.categories {
         let count = acc[category] ?? 0

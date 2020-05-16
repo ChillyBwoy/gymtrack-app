@@ -60,7 +60,8 @@ fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
 //    }.onAppear(perform: fetch)
 //  }
 //}
-//
+
+
 //struct WorkoutDetail_Previews: PreviewProvider {
 //  static var previews: some View {
 //    Group {
