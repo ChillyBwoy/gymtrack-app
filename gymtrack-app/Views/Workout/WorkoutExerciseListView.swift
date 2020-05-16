@@ -1,5 +1,5 @@
 //
-//  WorkoutDetailView.swift
+//  WorkoutExerciseListView.swift
 //  gymtrack-app
 //
 //  Created by Eugene Cheltsov on 16.05.2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WorkoutExercisesView: View {
+struct WorkoutExerciseListView: View {
   let workout: Workout
   let effortsByExercises: [(Exercise, [Effort])]
   @State private var activeItems = [UUID]()
@@ -29,7 +29,7 @@ struct WorkoutExercisesView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 5) {
       ForEach(effortsByExercises, id: \.0.id) { (exercise, efforts) in
-        WorkoutDetailExerciseView(
+        WorkoutExerciseEffortsView(
           exercise: exercise,
           efforts: efforts,
           isOpen: self.activeItems.contains(exercise.id))
@@ -44,7 +44,7 @@ struct WorkoutExercisesView: View {
   }
 }
 
-struct WorkoutDetailView_Previews: PreviewProvider {
+struct WorkoutExerciseListView_Previews: PreviewProvider {
   static var previews: some View {
     let manager = DataManagerMemory()
     let stubProvider = WorkoutStubProvider(manager: manager)
@@ -52,6 +52,6 @@ struct WorkoutDetailView_Previews: PreviewProvider {
     
     manager.save()
 
-    return WorkoutExercisesView(workout: workout)
+    return WorkoutExerciseListView(workout: workout)
   }
 }

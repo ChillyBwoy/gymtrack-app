@@ -12,7 +12,7 @@ struct ExerciseDetail: View {
   @Environment(\.managedObjectContext) var managedObjectContext
   let id: UUID
   private let fetchRequest: FetchRequest<Exercise>
-  private var exercise: Exercise? { fetchRequest.wrappedValue[0] }
+  private var exercise: Exercise { fetchRequest.wrappedValue[0] }
   
   init(id: UUID) {
     self.id = id
@@ -24,15 +24,9 @@ struct ExerciseDetail: View {
   }
 
   var body: some View {
-    VStack {
-     if exercise != nil {
-        ExerciseDetailView(exercise: exercise!)
-          .navigationBarTitle(Text(exercise!.name))
-          .navigationBarItems(trailing: EditButton())
-      } else {
-        Text("No exercise found")
-      }
-    }
+     ExerciseDetailView(exercise: exercise)
+       .navigationBarTitle(Text(exercise.name))
+       .navigationBarItems(trailing: EditButton())
   }
 }
 

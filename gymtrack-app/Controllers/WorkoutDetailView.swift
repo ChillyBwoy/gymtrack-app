@@ -1,5 +1,5 @@
 //
-//  WorkoutDetailContainer.swift
+//  WorkoutDetailView.swift
 //  gymtrack-app
 //
 //  Created by Eugene Cheltsov on 18.04.2020.
@@ -14,11 +14,11 @@ fileprivate enum WorkoutDetailGroupBy: String, CaseIterable {
   case byCategory = "Category"
 }
 
-struct WorkoutDetail: View {
+struct WorkoutDetailView: View {
   @Environment(\.managedObjectContext) var managedObjectContext
   let id: UUID
   private let fetchRequest: FetchRequest<Workout>
-  private var workout: Workout? { fetchRequest.wrappedValue[0] }
+  private var workout: Workout { fetchRequest.wrappedValue[0] }
   @State private var groupBy: WorkoutDetailGroupBy = .byExercise
   
   init(id: UUID) {
@@ -38,38 +38,34 @@ struct WorkoutDetail: View {
 
   var body: some View {
     NavigationView {
-      if workout != nil {
-        ScrollView(.vertical, showsIndicators: false) {
-          VStack(alignment: .leading, spacing: 20) {
-            Picker(selection: $groupBy, label: Text("Group efforts by")) {
-              ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
-                Text("\(type.rawValue)").tag(type)
-              }
+      ScrollView(.vertical, showsIndicators: false) {
+        VStack(alignment: .leading, spacing: 20) {
+          Picker(selection: $groupBy, label: Text("Group efforts by")) {
+            ForEach(WorkoutDetailGroupBy.allCases, id: \.self) { type in
+              Text("\(type.rawValue)").tag(type)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, 5)
-
-            WorkoutCategoriesView(workout: workout!)
-              .padding(.horizontal, 8)
-            WorkoutDetailView(workout: workout!)
           }
+          .pickerStyle(SegmentedPickerStyle())
+          .padding(.horizontal, 5)
+
+          WorkoutCategoriesView(workout: workout)
+            .padding(.horizontal, 8)
+          WorkoutExerciseListView(workout: workout)
         }
-        .padding(.horizontal, 10)
-        .navigationBarTitle(Text("\(workout!.date, formatter: self.dateFormatter)"))
-        .navigationBarItems(trailing: Button(action: {
-          print("Add")
-        }) {
-          Image(systemName: "plus")
-        })
-      } else {
-        Text("Workout not found")
       }
+      .padding(.horizontal, 10)
+      .navigationBarTitle(Text("\(workout.date, formatter: self.dateFormatter)"))
+      .navigationBarItems(trailing: Button(action: {
+        print("Add")
+      }) {
+        Image(systemName: "plus")
+      })
     }
   }
 }
 
 
-struct WorkoutDetail_Previews: PreviewProvider {
+struct WorkoutDetailView_Previews: PreviewProvider {
   static var previews: some View {
     let manager = DataManagerMemory()
     let stubProvider = WorkoutStubProvider(manager: manager)
@@ -78,9 +74,9 @@ struct WorkoutDetail_Previews: PreviewProvider {
     manager.save()
 
     return Group {
-      WorkoutDetail(id: workout.id)
+      WorkoutDetailView(id: workout.id)
         .colorScheme(.light)
-      WorkoutDetail(id: workout.id)
+      WorkoutDetailView(id: workout.id)
         .colorScheme(.dark)
     }.environment(\.managedObjectContext, manager.context)
   }

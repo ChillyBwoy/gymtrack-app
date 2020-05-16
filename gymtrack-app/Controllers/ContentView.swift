@@ -23,7 +23,7 @@ struct ContentView: View {
 //            Text("Today")
 //          }.tag(1)
 
-          WorkoutList().tabItem {
+          WorkoutListView().tabItem {
             Image(systemName: "calendar")
             Text("Workouts")
           }.tag(2)

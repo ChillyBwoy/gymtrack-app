@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct EffortsProgressView: View {
-  let exercise: Exercise
+  let efforts: [Effort]
   let max: Double
   let width: Double
 
-  init(exercise: Exercise, width: Double = 10.0) {
-    self.exercise = exercise
+  init(efforts: [Effort], width: Double = 10.0) {
+    self.efforts = efforts
     self.width = width
-    self.max = exercise.efforts.map { $0.value }.max() ?? 0
+    self.max = efforts.map { $0.value }.max() ?? 0
 
 //    let startDate = efforts.first?.createdAt
 //    let lastDate = Date()
@@ -26,8 +26,8 @@ struct EffortsProgressView: View {
     GeometryReader { geometry in
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(alignment: .bottom, spacing: 1) {
-          
-          ForEach(Array(self.exercise.efforts), id: \.id) { effort in
+
+          ForEach(Array(self.efforts), id: \.id) { effort in
             Capsule()
               .fill(effort.failure ? Color(UIColor.systemRed) : Color(UIColor.systemBlue))
               .frame(
@@ -49,7 +49,7 @@ struct ExerciseProgressView_Previews: PreviewProvider {
     manager.save()
 
     return VStack {
-      EffortsProgressView(exercise: exercise, width: 12)
+      EffortsProgressView(efforts: Array(exercise.efforts), width: 12)
         .frame(height: 200)
     }
   }

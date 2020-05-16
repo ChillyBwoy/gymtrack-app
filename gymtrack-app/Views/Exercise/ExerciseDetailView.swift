@@ -8,6 +8,24 @@
 
 import SwiftUI
 
+struct ExerciseStatView<Content>: View where Content: View {
+  var label: String
+  var content: Content
+  
+  init(label: String, @ViewBuilder content: @escaping () -> Content) {
+    self.label = label
+    self.content = content()
+  }
+  
+  var body: some View {
+    HStack {
+      Text(label)
+        .font(.subheadline)
+      Spacer()
+      content
+    }
+  }
+}
 
 struct ExerciseDetailView: View {
   @Environment(\.editMode) var mode
@@ -30,13 +48,19 @@ struct ExerciseDetailView: View {
   var body: some View {
     VStack(alignment: .leading) {
       if exercise.efforts.count > 0 {
-        ExerciseProgressView(exercise: exercise, width: 12)
+        EffortsProgressView(efforts: Array(exercise.efforts), width: 12)
           .frame(height: 100)
       }
       List {
         Section(header: Text("Statistics")) {
-          Text("Best: \(stat.best, specifier: "%.2f")")
-          Text("Average: \(stat.average, specifier: "%.2f")")
+          ExerciseStatView(label: "Best") {
+            Text("\(self.stat.best, specifier: "%.2f")")
+              .font(.headline)
+          }
+          ExerciseStatView(label: "Average") {
+            Text("\(self.stat.average, specifier: "%.2f")")
+              .font(.headline)
+          }
         }
 
         Section(header: Text("Settings")) {

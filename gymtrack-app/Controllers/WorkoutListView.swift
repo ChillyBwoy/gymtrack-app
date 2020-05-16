@@ -1,5 +1,5 @@
 //
-//  WorkoutListContainer.swift
+//  WorkoutListView.swift
 //  gymtrack-app
 //
 //  Created by Eugene Cheltsov on 18.04.2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WorkoutList: View {
+struct WorkoutListView: View {
   @State private var selectedDates: [Date] = []
   @State private var date: Date = Date()
 
@@ -17,8 +17,8 @@ struct WorkoutList: View {
   }
 }
 
-struct WorkoutListContainer_Previews: PreviewProvider {
+struct WorkoutListView_Previews: PreviewProvider {
   static var previews: some View {
-    WorkoutList()
+    WorkoutListView()
   }
 }
