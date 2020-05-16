@@ -10,7 +10,7 @@
 		3A0FB2072451F5C700631BE3 /* ExerciseProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */; };
 		3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */; };
 		3A113DD923F9ED550020CCF7 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DD823F9ED550020CCF7 /* schema.json */; };
-		3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */; };
+		3A113DDC23F9EDF40020CCF7 /* ExerciseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A113DDB23F9EDF40020CCF7 /* ExerciseListItemView.swift */; };
 		3A374F21245F43EA00C4D0F3 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */; };
 		3A374F24245F444900C4D0F3 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */; };
 		3A374F27245F47E100C4D0F3 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F26245F47E100C4D0F3 /* CategoryColor.swift */; };
@@ -68,7 +68,7 @@
 		3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressView.swift; sourceTree = "<group>"; };
 		3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoriesView.swift; sourceTree = "<group>"; };
 		3A113DD823F9ED550020CCF7 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		3A113DDB23F9EDF40020CCF7 /* ExerciseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemView.swift; sourceTree = "<group>"; };
 		3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
 		3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3A374F26245F47E100C4D0F3 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
@@ -211,6 +211,7 @@
 		3A48389823F9E09500D81883 /* gymtrack-app */ = {
 			isa = PBXGroup;
 			children = (
+				3AEBAC182470452A00D7D510 /* Containers */,
 				3A374F1F245F43C800C4D0F3 /* Lib */,
 				3AE0FA96245F3D10005774F7 /* Extensions */,
 				3AF43549245E1FF6004FA24E /* Managers */,
@@ -305,7 +306,7 @@
 		3ACEA30A244F1A320030E3DC /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				3A113DDB23F9EDF40020CCF7 /* ExerciseListView.swift */,
+				3A113DDB23F9EDF40020CCF7 /* ExerciseListItemView.swift */,
 				3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */,
 				3A0FB2062451F5C700631BE3 /* ExerciseProgressView.swift */,
 			);
@@ -329,6 +330,13 @@
 				3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		3AEBAC182470452A00D7D510 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		3AF43549245E1FF6004FA24E /* Managers */ = {
@@ -433,7 +441,7 @@
 				3AB12D1D2460B2750035E4E0 /* ExerciseStubProvider.swift in Sources */,
 				3AE0FA88245F39F3005774F7 /* Exercise+CoreDataClass.swift in Sources */,
 				3AEBAC0F246C7BE000D7D510 /* WorkoutStubProvider.swift in Sources */,
-				3A113DDC23F9EDF40020CCF7 /* ExerciseListView.swift in Sources */,
+				3A113DDC23F9EDF40020CCF7 /* ExerciseListItemView.swift in Sources */,
 				3A374F29245F4E7F00C4D0F3 /* CategoryView.swift in Sources */,
 				3A374F27245F47E100C4D0F3 /* CategoryColor.swift in Sources */,
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,

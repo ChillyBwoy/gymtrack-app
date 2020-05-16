@@ -20,7 +20,7 @@ class WorkoutStubProvider: StubProvider {
     let calendar = Calendar.current
     let date = calendar.date(from: DateComponents(year: 2020, month: 2, day: 27, hour: 8, minute: 0))!
 
-    let workout = Workout.create(with: manager.context, date: date)
+    let workout = Workout(context: manager.context, date: date)
     
     let category0 = Category(context: manager.context, name: "Arms", color: .red)
     let category1 = Category(context: manager.context, name: "Legs", color: .blue)

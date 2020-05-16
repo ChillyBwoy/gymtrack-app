@@ -53,13 +53,10 @@ struct ExerciseDetailView: View {
             CategoryView(category: category)
           }.onDelete(perform: delete)
         }
-        
       }
       .listStyle(GroupedListStyle())
       .environment(\.horizontalSizeClass, .regular)
     }
-    .navigationBarTitle(Text(exercise.name))
-    .navigationBarItems(trailing: EditButton())
   }
 }
 
@@ -73,6 +70,9 @@ struct ExerciseDetailView_Previews: PreviewProvider {
     
     return NavigationView {
       ExerciseDetailView(exercise: exercise)
-    }.colorScheme(.light)
+        .navigationBarTitle(Text(exercise.name))
+        .navigationBarItems(trailing: EditButton())
+    }
+    .colorScheme(.light)
   }
 }

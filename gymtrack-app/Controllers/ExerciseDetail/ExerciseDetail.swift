@@ -8,29 +8,44 @@
 
 import SwiftUI
 
-//struct ExerciseDetail<Model>: View where Model: ExerciseDetailModel {
-//  @ObservedObject var model: Model
-//  var id: String
-//
-//  private func fetch() {
-//    model.fetch(id: id)
-//  }
-//
-//  var body: some View {
-//    VStack(alignment: .center) {
-//      if model.exercise != nil {
-//        ExerciseDetailView(exercise: model.exercise!)
-//      } else {
-//        Text("Loading...")
-//      }
-//    }.onAppear(perform: fetch)
-//  }
-//}
-//
-//struct ExerciseDetail_Previews: PreviewProvider {
-//  static var previews: some View {
-//    NavigationView {
-//      ExerciseDetail(model: ExerciseDetailDataModel_Previews(), id: "")
-//    }.colorScheme(.light)
-//  }
-//}
+struct ExerciseDetail: View {
+  @Environment(\.managedObjectContext) var managedObjectContext
+  let id: UUID
+  private let fetchRequest: FetchRequest<Exercise>
+  private var exercise: Exercise? { fetchRequest.wrappedValue[0] }
+  
+  init(id: UUID) {
+    self.id = id
+    self.fetchRequest = FetchRequest<Exercise>(
+      entity: Exercise.entity(),
+      sortDescriptors: [],
+      predicate: NSPredicate(format: "id == %@", id as CVarArg),
+      animation: .easeIn)
+  }
+
+  var body: some View {
+    VStack {
+     if exercise != nil {
+        ExerciseDetailView(exercise: exercise!)
+          .navigationBarTitle(Text(exercise!.name))
+          .navigationBarItems(trailing: EditButton())
+      } else {
+        Text("No exercise found")
+      }
+    }
+  }
+}
+
+struct ExerciseDetail_Previews: PreviewProvider {
+  static var previews: some View {
+    let manager = DataManagerMemory()
+    let stubProvider = ExerciseStubProvider(manager: manager)
+    let exercise = stubProvider.one()
+    manager.save()
+
+    return NavigationView {
+      ExerciseDetail(id: exercise.id)
+    }
+    .environment(\.managedObjectContext, manager.context)
+  }
+}
