@@ -24,9 +24,15 @@ struct ExerciseDetail: View {
   }
 
   var body: some View {
-     ExerciseDetailView(exercise: exercise)
-       .navigationBarTitle(Text(exercise.name))
-       .navigationBarItems(trailing: EditButton())
+    VStack(alignment: .leading) {
+      if exercise.efforts.count > 0 {
+        EffortsProgressView(efforts: Array(exercise.efforts), width: 12)
+          .frame(height: 100)
+      }
+      ExerciseDetailView(exercise: exercise)
+        .navigationBarTitle(Text(exercise.name))
+        .navigationBarItems(trailing: EditButton())
+    }
   }
 }
 

@@ -14,7 +14,7 @@ struct CategoryView: View {
   var label: Text?
   
   var body: some View {
-    ZStack(alignment: .topLeading) {
+    ZStack(alignment: .center) {
       RoundedRectangle(cornerRadius: 4.0, style: .continuous)
         .fill(Color(category.color.value))
       HStack(alignment: .center, spacing: 2) {

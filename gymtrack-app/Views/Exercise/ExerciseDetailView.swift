@@ -8,24 +8,6 @@
 
 import SwiftUI
 
-struct ExerciseStatView<Content>: View where Content: View {
-  var label: String
-  var content: Content
-  
-  init(label: String, @ViewBuilder content: @escaping () -> Content) {
-    self.label = label
-    self.content = content()
-  }
-  
-  var body: some View {
-    HStack {
-      Text(label)
-        .font(.subheadline)
-      Spacer()
-      content
-    }
-  }
-}
 
 struct ExerciseDetailView: View {
   @Environment(\.editMode) var mode
@@ -46,41 +28,37 @@ struct ExerciseDetailView: View {
   }
 
   var body: some View {
-    VStack(alignment: .leading) {
-      if exercise.efforts.count > 0 {
-        EffortsProgressView(efforts: Array(exercise.efforts), width: 12)
-          .frame(height: 100)
+    List {
+      Section(header: Text("Statistics")) {
+        ListLabelView(label: "Best") {
+          Text("\(self.stat.best, specifier: "%.2f")")
+            .font(.headline)
+        }
+        ListLabelView(label: "Average") {
+          Text("\(self.stat.average, specifier: "%.2f")")
+            .font(.headline)
+        }
       }
-      List {
-        Section(header: Text("Statistics")) {
-          ExerciseStatView(label: "Best") {
-            Text("\(self.stat.best, specifier: "%.2f")")
-              .font(.headline)
-          }
-          ExerciseStatView(label: "Average") {
-            Text("\(self.stat.average, specifier: "%.2f")")
-              .font(.headline)
+
+      Section(header: Text("Settings")) {
+        Picker(selection: $selectedUnit, label: Text("Measure").font(.subheadline)) {
+          ForEach(ExerciseUnit.allCases, id: \.self) { type in
+            Text("\(type.rawValue)").tag(type).font(.subheadline)
           }
         }
 
-        Section(header: Text("Settings")) {
-          Picker(selection: $selectedUnit, label: Text("Measure")) {
-            ForEach(ExerciseUnit.allCases, id: \.self) { type in
-              Text("\(type.rawValue)").tag(type)
-            }
-          }
-          TextField("Name of the exercise", text: $fieldName)
-        }
-
-        Section(header: Text("Categories")) {
-          ForEach(Array(exercise.categories), id: \.id) { category in
-            CategoryView(category: category)
-          }.onDelete(perform: delete)
-        }
+        TextField("Name of the exercise", text: self.$fieldName)
+        .font(.subheadline)
       }
-      .listStyle(GroupedListStyle())
-      .environment(\.horizontalSizeClass, .regular)
+
+      Section(header: Text("Categories")) {
+        ForEach(Array(exercise.categories), id: \.id) { category in
+          CategoryView(category: category)
+        }.onDelete(perform: delete)
+      }
     }
+    .listStyle(GroupedListStyle())
+    .environment(\.horizontalSizeClass, .regular)
   }
 }
 
@@ -94,8 +72,8 @@ struct ExerciseDetailView_Previews: PreviewProvider {
     
     return NavigationView {
       ExerciseDetailView(exercise: exercise)
-        .navigationBarTitle(Text(exercise.name))
-        .navigationBarItems(trailing: EditButton())
+//        .navigationBarTitle(Text(exercise.name))
+//        .navigationBarItems(trailing: EditButton())
     }
     .colorScheme(.light)
   }

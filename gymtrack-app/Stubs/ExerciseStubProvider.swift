@@ -23,7 +23,7 @@ class ExerciseStubProvider: StubProvider {
     var currDate = date
     
     for _ in 0..<10 {
-      switch (exercise.unit) {
+      switch exercise.unit {
       case .check:
         efforts.append(
           Effort(

@@ -47,6 +47,9 @@
 		3AEBAC11246C91AC00D7D510 /* EffortStubProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */; };
 		3AEBAC13246DE1DA00D7D510 /* ExerciseStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC12246DE1DA00D7D510 /* ExerciseStat.swift */; };
 		3AEBAC17246FFBCA00D7D510 /* WorkoutExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC16246FFBCA00D7D510 /* WorkoutExerciseListView.swift */; };
+		3AEBAC1C247088E300D7D510 /* ListLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC1B247088E300D7D510 /* ListLabelView.swift */; };
+		3AEBAC1E2470903A00D7D510 /* ExerciseStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC1D2470903A00D7D510 /* ExerciseStatView.swift */; };
+		3AEBAC202470931400D7D510 /* EffortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBAC1F2470931400D7D510 /* EffortView.swift */; };
 		3AF4354B245E2002004FA24E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4354A245E2002004FA24E /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,9 @@
 		3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortStubProvider.swift; sourceTree = "<group>"; };
 		3AEBAC12246DE1DA00D7D510 /* ExerciseStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStat.swift; sourceTree = "<group>"; };
 		3AEBAC16246FFBCA00D7D510 /* WorkoutExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseListView.swift; sourceTree = "<group>"; };
+		3AEBAC1B247088E300D7D510 /* ListLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabelView.swift; sourceTree = "<group>"; };
+		3AEBAC1D2470903A00D7D510 /* ExerciseStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStatView.swift; sourceTree = "<group>"; };
+		3AEBAC1F2470931400D7D510 /* EffortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortView.swift; sourceTree = "<group>"; };
 		3AF4354A245E2002004FA24E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +144,7 @@
 				3ACEA30A244F1A320030E3DC /* Exercise */,
 				3ACEA301244F116B0030E3DC /* Effort */,
 				3A0FB2082451F6E700631BE3 /* Workout */,
+				3AEBAC1B247088E300D7D510 /* ListLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 		3ACEA301244F116B0030E3DC /* Effort */ = {
 			isa = PBXGroup;
 			children = (
+				3AEBAC1F2470931400D7D510 /* EffortView.swift */,
 				3A0FB2062451F5C700631BE3 /* EffortsProgressView.swift */,
 				3ACEA302244F11830030E3DC /* EffortListView.swift */,
 				3ACEA304244F14260030E3DC /* EffortListItemView.swift */,
@@ -274,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */,
+				3AEBAC1D2470903A00D7D510 /* ExerciseStatView.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				3AB12D2024635A0C0035E4E0 /* CalendarView.swift in Sources */,
 				3AB86E67244E056200E5C009 /* ViewModelStub.swift in Sources */,
 				3AE0FA8C245F39F3005774F7 /* Workout+CoreDataClass.swift in Sources */,
+				3AEBAC202470931400D7D510 /* EffortView.swift in Sources */,
 				3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */,
 				3AE7D154244E3BC800031884 /* ViewModel.swift in Sources */,
 				3AE0FA51245F2BAB005774F7 /* DataProvider.swift in Sources */,
@@ -410,6 +420,7 @@
 				3A374F27245F47E100C4D0F3 /* CategoryColor.swift in Sources */,
 				3A6DD1272448EDDD001215E7 /* ExerciseDetail.swift in Sources */,
 				3AEBAC17246FFBCA00D7D510 /* WorkoutExerciseListView.swift in Sources */,
+				3AEBAC1C247088E300D7D510 /* ListLabelView.swift in Sources */,
 				3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */,
 				3AE0FA86245F39F3005774F7 /* Effort+CoreDataClass.swift in Sources */,
 				3AE0FA98245F3D22005774F7 /* NSManagedObject+rawValue.swift in Sources */,
@@ -420,6 +431,7 @@
 				3A48389E23F9E09500D81883 /* ContentView.swift in Sources */,
 				3AF4354B245E2002004FA24E /* DataManager.swift in Sources */,
 				3A0FB2072451F5C700631BE3 /* EffortsProgressView.swift in Sources */,
+				3AEBAC1E2470903A00D7D510 /* ExerciseStatView.swift in Sources */,
 				3AB12D19246076520035E4E0 /* ExerciseUnit.swift in Sources */,
 				3ACEA308244F16670030E3DC /* WorkoutExerciseEffortsView.swift in Sources */,
 				3AB86E34244B66E300E5C009 /* ExerciseListView.swift in Sources */,

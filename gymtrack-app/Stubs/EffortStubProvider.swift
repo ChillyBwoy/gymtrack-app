@@ -31,7 +31,7 @@ class EffortStubProvider: StubProvider {
            createdAt: date,
            value: 20,
            repeats: 10,
-          failure: false)
+           failure: false)
   }
   
   func list() -> [Effort] {
