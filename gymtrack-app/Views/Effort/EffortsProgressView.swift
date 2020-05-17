@@ -21,7 +21,7 @@ struct EffortsProgressView: View {
 //    let startDate = efforts.first?.createdAt
 //    let lastDate = Date()
   }
-  
+
   var body: some View {
     GeometryReader { geometry in
       ScrollView(.horizontal, showsIndicators: false) {

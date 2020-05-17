@@ -67,13 +67,17 @@ extension Exercise {
   }
   
   func stat() -> ExerciseStat {
-    let values: [Double] = efforts.map({ $0.value })
+    let sorted = efforts.sorted(by: { $0.value < $1.value })
+
+    let averageValue = sorted.reduce(0, { $0 + $1.value }) / Double(efforts.count)
+    let averageRepeats = sorted.reduce(0, { $0 + Int($1.repeats) }) / efforts.count
+    let best = efforts.max(by: { $0.value < $1.value })
+    let median = sorted[efforts.count / 2]
     
-    let best = values.max() ?? 0
-    let median = values.sorted(by: <)[efforts.count / 2]
-    let average = values.reduce(0, +) / Double(efforts.count)
-    
-    return ExerciseStat(best: best, average: average, median: median)
+    return ExerciseStat(
+      average: (averageValue, averageRepeats),
+      best: (best?.value ?? 0, Int(best?.repeats ?? 0)),
+      median: (median.value, Int(median.repeats)))
   }
 }
 

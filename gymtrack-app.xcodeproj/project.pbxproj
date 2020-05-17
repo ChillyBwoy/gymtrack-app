@@ -192,7 +192,6 @@
 		3A48389823F9E09500D81883 /* gymtrack-app */ = {
 			isa = PBXGroup;
 			children = (
-				3AEBAC182470452A00D7D510 /* Containers */,
 				3A374F1F245F43C800C4D0F3 /* Lib */,
 				3AE0FA96245F3D10005774F7 /* Extensions */,
 				3AF43549245E1FF6004FA24E /* Managers */,
@@ -304,13 +303,6 @@
 				3AEBAC10246C91AC00D7D510 /* EffortStubProvider.swift */,
 			);
 			path = Stubs;
-			sourceTree = "<group>";
-		};
-		3AEBAC182470452A00D7D510 /* Containers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Containers;
 			sourceTree = "<group>";
 		};
 		3AF43549245E1FF6004FA24E /* Managers */ = {

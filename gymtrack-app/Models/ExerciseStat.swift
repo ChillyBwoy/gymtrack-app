@@ -7,7 +7,7 @@
 //
 
 struct ExerciseStat {
-  let best: Double
-  let average: Double
-  let median: Double
+  let average: (Double, Int)
+  let best: (Double, Int)
+  let median: (Double, Int)
 }

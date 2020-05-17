@@ -29,16 +29,18 @@ struct ExerciseDetailView: View {
 
   var body: some View {
     List {
-      Section(header: Text("Statistics")) {
-        ListLabelView(label: "Best") {
-          Text("\(self.stat.best, specifier: "%.2f")")
-            .font(.headline)
-        }
-        ListLabelView(label: "Average") {
-          Text("\(self.stat.average, specifier: "%.2f")")
-            .font(.headline)
-        }
-      }
+      ExerciseStatView(exercise: exercise)
+
+//      Section(header: Text("Statistics")) {
+//        ListLabelView(label: "Best") {
+//          Text("\(self.stat.best.0, specifier: "%.2f")")
+//            .font(.headline)
+//        }
+//        ListLabelView(label: "Average") {
+//          Text("\(self.stat.average.0, specifier: "%.2f")")
+//            .font(.headline)
+//        }
+//      }
 
       Section(header: Text("Settings")) {
         Picker(selection: $selectedUnit, label: Text("Measure").font(.subheadline)) {

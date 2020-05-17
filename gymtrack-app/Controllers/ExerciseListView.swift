@@ -40,8 +40,8 @@ fileprivate struct ExerciseListItemView: View {
       Text(exercise.name)
         .lineLimit(nil)
       HStack {
-        ExerciseListLabelView(unit: exercise.unit, label: "Best", value: stat.best)
-        ExerciseListLabelView(unit: exercise.unit, label: "Avg", value: stat.average)
+        ExerciseListLabelView(unit: exercise.unit, label: "Best", value: stat.best.0)
+        ExerciseListLabelView(unit: exercise.unit, label: "Avg", value: stat.average.0)
       }
     }
   }

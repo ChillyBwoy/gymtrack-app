@@ -25,22 +25,27 @@ fileprivate struct ExerciseStatItemView: View {
 }
 
 struct ExerciseStatView: View {
-  var stat: ExerciseStat
-  var unit: ExerciseUnit
+  let exercise: Exercise
+  let stat: ExerciseStat
+
+  init(exercise: Exercise) {
+    self.exercise = exercise
+    self.stat = exercise.stat()
+  }
 
   var body: some View {
     HStack(alignment: .top, spacing: 8) {
       ExerciseStatItemView(
         label: Text("Best"),
-        value: Text("\(stat.best, specifier: "%.2f")"),
-        unit: unit)
+        value: Text("\(stat.best.0, specifier: "%.2f")"),
+        unit: exercise.unit)
 
       Divider()
 
       ExerciseStatItemView(
         label: Text("Average"),
-        value: Text("\(stat.average, specifier: "%.2f")"),
-        unit: unit)
+        value: Text("\(stat.average.0, specifier: "%.2f")"),
+        unit: exercise.unit)
     }
   }
 }
@@ -53,9 +58,6 @@ struct ExerciseStatView_Previews: PreviewProvider {
     
     manager.save()
 
-    return ExerciseStatView(
-      stat: exercise.stat(),
-      unit: exercise.unit
-    )
+    return ExerciseStatView(exercise: exercise)
   }
 }
