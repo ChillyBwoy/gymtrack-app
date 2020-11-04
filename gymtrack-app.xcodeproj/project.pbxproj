@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A0FB2072451F5C700631BE3 /* EffortsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2062451F5C700631BE3 /* EffortsProgressView.swift */; };
 		3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */; };
+		3A28BB012553663D0097CFAE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A28BB002553663D0097CFAE /* README.md */; };
 		3A374F21245F43EA00C4D0F3 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */; };
 		3A374F24245F444900C4D0F3 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */; };
 		3A374F27245F47E100C4D0F3 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F26245F47E100C4D0F3 /* CategoryColor.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		3A0FB2062451F5C700631BE3 /* EffortsProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortsProgressView.swift; sourceTree = "<group>"; };
 		3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoriesView.swift; sourceTree = "<group>"; };
+		3A28BB002553663D0097CFAE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
 		3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3A374F26245F47E100C4D0F3 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		3A48388D23F9E09500D81883 = {
 			isa = PBXGroup;
 			children = (
+				3A28BB002553663D0097CFAE /* README.md */,
 				3A48389823F9E09500D81883 /* gymtrack-app */,
 				3A48389723F9E09500D81883 /* Products */,
 				3A40F39F244B070B00A256E6 /* Frameworks */,
@@ -373,6 +376,7 @@
 			files = (
 				3A4838A623F9E09900D81883 /* LaunchScreen.storyboard in Resources */,
 				3A4838A323F9E09900D81883 /* Preview Assets.xcassets in Resources */,
+				3A28BB012553663D0097CFAE /* README.md in Resources */,
 				3A4838A023F9E09900D81883 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
