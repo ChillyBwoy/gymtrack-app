@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A0FB2072451F5C700631BE3 /* EffortsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2062451F5C700631BE3 /* EffortsProgressView.swift */; };
 		3A0FB20A2451F71800631BE3 /* WorkoutCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */; };
-		3A113DD923F9ED550020CCF7 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A113DD823F9ED550020CCF7 /* schema.json */; };
 		3A374F21245F43EA00C4D0F3 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */; };
 		3A374F24245F444900C4D0F3 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */; };
 		3A374F27245F47E100C4D0F3 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A374F26245F47E100C4D0F3 /* CategoryColor.swift */; };
@@ -32,7 +31,6 @@
 		3ACEA303244F11830030E3DC /* EffortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA302244F11830030E3DC /* EffortListView.swift */; };
 		3ACEA305244F14260030E3DC /* EffortListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA304244F14260030E3DC /* EffortListItemView.swift */; };
 		3ACEA308244F16670030E3DC /* WorkoutExerciseEffortsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA307244F16670030E3DC /* WorkoutExerciseEffortsView.swift */; };
-		3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEA32D244F1FB30030E3DC /* schema.graphql */; };
 		3ACEA336244F60090030E3DC /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */; };
 		3AE0FA51245F2BAB005774F7 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0FA50245F2BAB005774F7 /* DataProvider.swift */; };
 		3AE0FA53245F2C5D005774F7 /* DataManagerMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0FA52245F2C5D005774F7 /* DataManagerMemory.swift */; };
@@ -69,7 +67,6 @@
 /* Begin PBXFileReference section */
 		3A0FB2062451F5C700631BE3 /* EffortsProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortsProgressView.swift; sourceTree = "<group>"; };
 		3A0FB2092451F71800631BE3 /* WorkoutCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoriesView.swift; sourceTree = "<group>"; };
-		3A113DD823F9ED550020CCF7 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		3A374F20245F43EA00C4D0F3 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
 		3A374F22245F444900C4D0F3 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3A374F26245F47E100C4D0F3 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
@@ -94,7 +91,6 @@
 		3ACEA302244F11830030E3DC /* EffortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListView.swift; sourceTree = "<group>"; };
 		3ACEA304244F14260030E3DC /* EffortListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffortListItemView.swift; sourceTree = "<group>"; };
 		3ACEA307244F16670030E3DC /* WorkoutExerciseEffortsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseEffortsView.swift; sourceTree = "<group>"; };
-		3ACEA32D244F1FB30030E3DC /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		3ACEA335244F60090030E3DC /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		3AE0FA50245F2BAB005774F7 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3AE0FA52245F2C5D005774F7 /* DataManagerMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMemory.swift; sourceTree = "<group>"; };
@@ -200,8 +196,6 @@
 				3AB86E65244E055800E5C009 /* Protocols */,
 				3A182CD2244F093D001AE620 /* Views */,
 				3A694BE223FACA2C00DFF737 /* Controllers */,
-				3A113DD823F9ED550020CCF7 /* schema.json */,
-				3ACEA32D244F1FB30030E3DC /* schema.graphql */,
 				3A48389923F9E09500D81883 /* AppDelegate.swift */,
 				3A48389B23F9E09500D81883 /* SceneDelegate.swift */,
 				3A48389F23F9E09900D81883 /* Assets.xcassets */,
@@ -377,11 +371,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A113DD923F9ED550020CCF7 /* schema.json in Resources */,
 				3A4838A623F9E09900D81883 /* LaunchScreen.storyboard in Resources */,
 				3A4838A323F9E09900D81883 /* Preview Assets.xcassets in Resources */,
 				3A4838A023F9E09900D81883 /* Assets.xcassets in Resources */,
-				3ACEA32E244F1FB30030E3DC /* schema.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
